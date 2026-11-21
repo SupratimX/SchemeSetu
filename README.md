@@ -1,6 +1,7 @@
 # SchemeSetu (স্কিমসেতু / स्कीमसेतु)
 
 > **Civic Welfare Discovery & Eligibility Engine for Indian Citizens**  
+> *Developed by Supratim Gogoi*  
 > *100% Client-Side • Zero Data Tracking • Indic Multilingual • Offline-Ready PWA*
 
 SchemeSetu simplifies the discovery of government welfare schemes and benefits by evaluating individual circumstances through a fast, transparent, 60-second questionnaire.
@@ -106,3 +107,9 @@ npm run build
 # Preview production build locally
 npm run preview
 ```
+
+---
+
+## 👨‍💻 Author
+
+Developed with ❤️ by **Supratim Gogoi**.
