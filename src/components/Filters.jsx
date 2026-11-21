@@ -13,7 +13,9 @@ export default function Filters({ filters, onChange, onReset }) {
     { id: 'employment', label: t('browse.cat_employment', {}, lang) },
     { id: 'women-child', label: t('browse.cat_women_child', {}, lang) },
     { id: 'pension', label: t('browse.cat_pension', {}, lang) },
-    { id: 'skill', label: t('browse.cat_skill', {}, lang) }
+    { id: 'skill', label: t('browse.cat_skill', {}, lang) },
+    { id: 'insurance', label: 'Insurance' },
+    { id: 'energy', label: 'Solar & Energy' }
   ];
 
   return (
@@ -49,6 +51,32 @@ export default function Filters({ filters, onChange, onReset }) {
               }`}
             >
               {lvl === 'all' ? t('browse.level_all', {}, lang) : lvl === 'central' ? t('browse.level_central', {}, lang) : t('browse.level_state', {}, lang)}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Deadline / Application Window Filter */}
+      <div>
+        <label class="block text-xs font-semibold text-gray-600 mb-2">
+          Application Window
+        </label>
+        <div class="grid grid-cols-1 gap-1.5">
+          {[
+            { id: 'all', label: 'All Schemes' },
+            { id: 'rolling', label: '✅ Open Year-Round / Rolling' },
+            { id: 'timebound', label: '⏳ Time-Bound / Annual Cycle' }
+          ].map(d => (
+            <button
+              key={d.id}
+              onClick={() => onChange({ ...filters, deadlineType: d.id })}
+              class={`py-2 px-3 text-xs font-semibold rounded-xl text-left border transition-all ${
+                (filters.deadlineType || 'all') === d.id
+                  ? 'bg-orange-50 border-[#FF9933] text-[#FF9933] font-bold'
+                  : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              {d.label}
             </button>
           ))}
         </div>

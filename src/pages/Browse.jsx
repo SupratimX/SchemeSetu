@@ -24,6 +24,7 @@ export default function Browse() {
   const [filters, setFilters] = useState({
     level: 'all',
     category: getInitialCategory(),
+    deadlineType: 'all',
     sort: 'relevance'
   });
 
@@ -66,6 +67,15 @@ export default function Browse() {
         if (!cats.includes(filters.category)) return false;
       }
 
+      // 4. Deadline filter
+      if (filters.deadlineType && filters.deadlineType !== 'all') {
+        if (filters.deadlineType === 'rolling') {
+          if (s.deadlineType !== 'rolling') return false;
+        } else if (filters.deadlineType === 'timebound') {
+          if (s.deadlineType === 'rolling') return false;
+        }
+      }
+
       return true;
     }).sort((a, b) => {
       if (filters.sort === 'newest') {
@@ -83,7 +93,7 @@ export default function Browse() {
           {t('browse.title', {}, lang)}
         </h1>
         <p class="text-sm text-gray-600 max-w-lg mx-auto">
-          Explore all Central and State welfare programs. Filter by category, level, or search by keyword.
+          Explore all Central and State welfare programs. Filter by category, application deadline, or search by keyword.
         </p>
 
         <SearchBar
@@ -102,7 +112,7 @@ export default function Browse() {
             onChange={setFilters}
             onReset={() => {
               setQuery('');
-              setFilters({ level: 'all', category: 'all', sort: 'relevance' });
+              setFilters({ level: 'all', category: 'all', deadlineType: 'all', sort: 'relevance' });
             }}
           />
         </div>
@@ -111,11 +121,18 @@ export default function Browse() {
         <div class="md:col-span-3 space-y-4">
           <div class="flex items-center justify-between text-xs font-semibold text-gray-500">
             <span>{t('browse.results_count', { count: filteredSchemes.length }, lang)}</span>
-            {filters.category !== 'all' && (
-              <span class="px-2 py-0.5 rounded-full bg-orange-100 text-[#FF9933]">
-                Category: #{filters.category}
-              </span>
-            )}
+            <div class="flex items-center gap-2">
+              {filters.deadlineType !== 'all' && (
+                <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[11px]">
+                  Window: {filters.deadlineType === 'rolling' ? 'Open Year-Round' : 'Time-Bound'}
+                </span>
+              )}
+              {filters.category !== 'all' && (
+                <span class="px-2 py-0.5 rounded-full bg-orange-100 text-[#FF9933] text-[11px]">
+                  #{filters.category}
+                </span>
+              )}
+            </div>
           </div>
 
           {filteredSchemes.length === 0 ? (
@@ -126,7 +143,7 @@ export default function Browse() {
               <button
                 onClick={() => {
                   setQuery('');
-                  setFilters({ level: 'all', category: 'all', sort: 'relevance' });
+                  setFilters({ level: 'all', category: 'all', deadlineType: 'all', sort: 'relevance' });
                 }}
                 class="px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-700 rounded-xl hover:bg-gray-200"
               >

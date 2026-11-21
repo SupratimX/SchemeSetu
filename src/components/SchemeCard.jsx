@@ -10,6 +10,7 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
   const name = scheme.name?.[lang] || scheme.name?.en || scheme.id;
   const summary = scheme.summary?.[lang] || scheme.summary?.en || '';
   const benefit = scheme.benefit?.amount || scheme.benefit?.type || '';
+  const deadline = scheme.deadline || 'Open Year-Round';
 
   // Get up to 2 notable reason lines
   const topReasons = (evaluation?.reasons || [])
@@ -102,7 +103,7 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
         </h3>
 
         {/* Category chips */}
-        <div class="flex flex-wrap gap-1 mb-3">
+        <div class="flex flex-wrap gap-1 mb-2.5">
           {Array.isArray(scheme.category) && scheme.category.map(cat => (
             <span key={cat} class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-gray-100 text-gray-600">
               #{cat}
@@ -112,10 +113,17 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
 
         {/* Benefit Highlight */}
         {benefit && (
-          <div class="mb-3 px-3 py-1.5 rounded-xl bg-orange-50/70 border border-orange-100 inline-block text-xs font-bold text-[#FF9933]">
+          <div class="mb-2.5 px-3 py-1.5 rounded-xl bg-orange-50/70 border border-orange-100 inline-block text-xs font-bold text-[#FF9933]">
             🎁 {benefit}
           </div>
         )}
+
+        {/* Last Date to Apply / Deadline Badge */}
+        <div class="mb-3 flex items-center gap-1.5 text-xs font-semibold text-gray-700 bg-gray-50 border border-gray-200/80 px-2.5 py-1.5 rounded-xl">
+          <span class="text-amber-600">⏳</span>
+          <span class="text-gray-500 font-medium">Last Date:</span>
+          <span class="text-gray-900 truncate">{deadline}</span>
+        </div>
 
         {/* Summary */}
         <p class="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed mb-4">

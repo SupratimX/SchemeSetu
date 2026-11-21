@@ -11,6 +11,7 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
   const name = scheme.name?.[lang] || scheme.name?.en || scheme.id;
   const summary = scheme.summary?.[lang] || scheme.summary?.en || '';
   const benefit = scheme.benefit?.amount || scheme.benefit?.type || '';
+  const deadline = scheme.deadline || 'Open Year-Round (Rolling)';
 
   // Calculate staleness (older than 6 months = ~180 days)
   const isOutdated = (() => {
@@ -44,7 +45,7 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <div class="flex items-center gap-2 flex-wrap">
             <span class="px-3 py-1 text-xs font-bold rounded-full bg-orange-100 text-[#FF9933]">
-              {scheme.level === 'central' ? 'Central Scheme' : `State Scheme (${scheme.state})`}
+              {scheme.level === 'central' ? 'Central Government Scheme' : `State Government Scheme (${scheme.state})`}
             </span>
             {isOutdated && (
               <span class="px-3 py-1 text-xs font-medium rounded-full bg-amber-100 text-amber-800">
@@ -92,19 +93,41 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
         </p>
       </div>
 
-      {/* Benefits Card */}
-      <div class="bg-gradient-to-br from-orange-50/80 to-amber-50/50 rounded-2xl border border-orange-100 p-5 sm:p-6">
-        <h3 class="text-sm font-bold uppercase tracking-wider text-[#FF9933] mb-2">
-          🎁 {t('scheme.benefits', {}, lang)}
-        </h3>
-        <div class="text-xl sm:text-2xl font-black text-gray-900 mb-1">
-          {benefit}
+      {/* Two Highlight Cards: Benefits & Application Deadline */}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Benefits Card */}
+        <div class="bg-gradient-to-br from-orange-50/80 to-amber-50/50 rounded-2xl border border-orange-100 p-5 sm:p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-[#FF9933] mb-2 flex items-center gap-1.5">
+              <span>🎁</span> {t('scheme.benefits', {}, lang)}
+            </h3>
+            <div class="text-lg sm:text-xl font-black text-gray-900 mb-1">
+              {benefit}
+            </div>
+          </div>
+          {scheme.benefit?.frequency && (
+            <p class="text-xs text-gray-600 font-medium mt-2">
+              <strong>Frequency:</strong> {scheme.benefit.frequency}
+            </p>
+          )}
         </div>
-        {scheme.benefit?.frequency && (
-          <p class="text-xs text-gray-600 font-medium">
-            Frequency: {scheme.benefit.frequency}
+
+        {/* Application Deadline Card */}
+        <div class="bg-gradient-to-br from-blue-50/80 to-indigo-50/50 rounded-2xl border border-blue-100 p-5 sm:p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2 flex items-center gap-1.5">
+              <span>⏳</span> Last Date to Apply / Application Window
+            </h3>
+            <div class="text-lg sm:text-xl font-black text-gray-900 mb-1">
+              {deadline}
+            </div>
+          </div>
+          <p class="text-xs text-gray-600 mt-2">
+            {scheme.deadlineType === 'rolling'
+              ? '✅ Applications accepted on a continuous rolling basis throughout the financial year.'
+              : '⚠️ Time-sensitive application window. Please verify cutoffs before applying.'}
           </p>
-        )}
+        </div>
       </div>
 
       {/* Eligibility Breakdown */}
@@ -197,30 +220,52 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
         </div>
       )}
 
-      {/* Direct Apply CTA & Helpline */}
-      <div class="pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-        {scheme.links?.official && (
-          <a
-            href={scheme.links.official}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-6 py-3.5 bg-[#138808] hover:bg-[#0f6b06] text-white text-center font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
-          >
-            <span>{t('scheme.official_link', {}, lang)}</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-        )}
+      {/* Official Links & Direct Apply Actions (Dual Verified Links) */}
+      <div class="pt-6 border-t border-gray-200 space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500">
+          Official Application Portals & Guidance
+        </h4>
+
+        <div class="flex flex-col sm:flex-row items-stretch gap-3">
+          {scheme.links?.official && (
+            <a
+              href={scheme.links.official}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 px-5 py-3.5 bg-[#138808] hover:bg-[#0f6b06] text-white text-center font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+            >
+              <span>🌐 Apply on Official Ministry Portal</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          )}
+
+          {scheme.links?.myscheme && (
+            <a
+              href={scheme.links.myscheme}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 px-5 py-3.5 bg-gray-900 hover:bg-gray-800 text-white text-center font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+            >
+              <span>🏛️ National myScheme Portal</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          )}
+        </div>
 
         {scheme.links?.helpline && (
-          <a
-            href={`tel:${scheme.links.helpline}`}
-            class="px-5 py-3 rounded-xl border border-gray-300 text-gray-800 font-semibold text-center hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
-          >
-            <span>📞 {t('scheme.helpline', {}, lang)}:</span>
-            <span class="font-bold text-[#FF9933]">{scheme.links.helpline}</span>
-          </a>
+          <div class="flex items-center justify-center pt-2">
+            <a
+              href={`tel:${scheme.links.helpline}`}
+              class="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-[#FF9933] font-semibold transition-colors"
+            >
+              <span>📞 Official Helpline:</span>
+              <span class="font-bold text-[#FF9933] underline">{scheme.links.helpline}</span>
+            </a>
+          </div>
         )}
       </div>
 
