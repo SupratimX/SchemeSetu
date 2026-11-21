@@ -27,12 +27,13 @@ export default function DocumentChecklistPage() {
   return (
     <div class="max-w-4xl mx-auto py-10 px-4 sm:px-6 space-y-6">
       <div class="mb-4">
-        <a
-          href="javascript:history.back()"
+        <button
+          type="button"
+          onClick={() => window.history.length > 1 ? window.history.back() : (window.location.hash = '#/results')}
           class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 hover:text-[#FF9933] transition-colors"
         >
           ← Back
-        </a>
+        </button>
       </div>
 
       <DocumentChecklist

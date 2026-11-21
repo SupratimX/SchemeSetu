@@ -171,7 +171,7 @@ export default function QuestionCard({
                   class={`w-full text-left p-3.5 rounded-xl border flex items-start gap-3 transition-all ${
                     isChecked
                       ? 'border-[#FF9933] bg-orange-50/60 ring-1 ring-[#FF9933]'
-                      : 'border-gray-200 hover:bg-gray-50'
+                      : 'border-gray-200 bg-white hover:bg-gray-50 text-gray-700'
                   }`}
                 >
                   <input

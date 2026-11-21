@@ -59,8 +59,16 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
 
   return (
     <div
-      onClick={() => onCardClick ? onCardClick(scheme) : window.location.hash = `#/scheme/${scheme.id}`}
-      class="bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-200 cursor-pointer overflow-hidden flex flex-col justify-between"
+      role="button"
+      tabIndex={0}
+      onClick={() => onCardClick ? onCardClick(scheme) : (window.location.hash = `#/scheme/${scheme.id}`)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onCardClick ? onCardClick(scheme) : (window.location.hash = `#/scheme/${scheme.id}`);
+        }
+      }}
+      class="bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-200 cursor-pointer overflow-hidden flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-[#FF9933]"
     >
       <div class="p-5">
         {/* Top Badges */}

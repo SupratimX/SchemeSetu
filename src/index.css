@@ -67,6 +67,23 @@ html.dark {
   color: #f0f6fc !important;
 }
 
+/* Dark grays inside containers */
+.high-contrast .bg-gray-800,
+.high-contrast [class*="bg-gray-800"] {
+  background-color: #282e36 !important;
+  color: #ffffff !important;
+}
+.high-contrast .bg-gray-900:not(footer),
+.high-contrast [class*="bg-gray-900"]:not(footer) {
+  background-color: #30363d !important;
+  color: #ffffff !important;
+  border-color: #484f58 !important;
+}
+.high-contrast .bg-gray-900:not(footer):hover,
+.high-contrast [class*="bg-gray-900"]:not(footer):hover {
+  background-color: #3f4752 !important;
+}
+
 /* 4. Text Contrast Overrides - Prevent matching background */
 .high-contrast .text-gray-900,
 .high-contrast .text-gray-800 {
@@ -163,33 +180,60 @@ html.dark {
   border-color: #3730a3 !important;
 }
 
-/* Red Tints */
+/* Red & Rose Tints */
 .high-contrast [class*="bg-red-50"],
-.high-contrast [class*="bg-red-100"] {
+.high-contrast [class*="bg-red-100"],
+.high-contrast [class*="bg-rose-50"],
+.high-contrast [class*="bg-rose-100"] {
   background-color: #2d1013 !important;
   color: #fecaca !important;
   border-color: #991b1b !important;
 }
 
-/* 7. Category Text Overrides in Dark Mode */
+/* 7. Category & Status Text Overrides in Dark Mode (High Legibility) */
 .high-contrast .text-green-900,
-.high-contrast .text-green-800 { color: #86efac !important; }
+.high-contrast .text-green-800,
+.high-contrast .text-green-700 { color: #86efac !important; }
+
 .high-contrast .text-blue-900,
-.high-contrast .text-blue-800 { color: #93c5fd !important; }
+.high-contrast .text-blue-800,
+.high-contrast .text-blue-700,
+.high-contrast .text-blue-600 { color: #93c5fd !important; }
+
 .high-contrast .text-red-900,
-.high-contrast .text-red-800 { color: #fca5a5 !important; }
+.high-contrast .text-red-800,
+.high-contrast .text-red-700 { color: #fca5a5 !important; }
+
+.high-contrast .text-rose-900,
+.high-contrast .text-rose-800,
+.high-contrast .text-rose-700,
+.high-contrast .text-rose-600 { color: #fca5a5 !important; }
+
 .high-contrast .text-amber-900,
-.high-contrast .text-amber-800 { color: #fde047 !important; }
+.high-contrast .text-amber-800,
+.high-contrast .text-amber-700,
+.high-contrast .text-amber-600 { color: #fde047 !important; }
+
 .high-contrast .text-purple-900,
-.high-contrast .text-purple-800 { color: #d8b4fe !important; }
+.high-contrast .text-purple-800,
+.high-contrast .text-purple-700 { color: #d8b4fe !important; }
+
 .high-contrast .text-pink-900,
-.high-contrast .text-pink-800 { color: #f472b6 !important; }
+.high-contrast .text-pink-800,
+.high-contrast .text-pink-700 { color: #f472b6 !important; }
+
 .high-contrast .text-orange-900,
-.high-contrast .text-orange-800 { color: #fdba74 !important; }
+.high-contrast .text-orange-800,
+.high-contrast .text-orange-700 { color: #fdba74 !important; }
+
 .high-contrast .text-indigo-900,
-.high-contrast .text-indigo-800 { color: #a5b4fc !important; }
+.high-contrast .text-indigo-800,
+.high-contrast .text-indigo-700 { color: #a5b4fc !important; }
+
 .high-contrast .text-emerald-900,
-.high-contrast .text-emerald-800 { color: #6ee7b7 !important; }
+.high-contrast .text-emerald-800,
+.high-contrast .text-emerald-700,
+.high-contrast .text-emerald-600 { color: #6ee7b7 !important; }
 
 /* 8. Radio Buttons & Checkbox Cards */
 .high-contrast button:not([class*="bg-[#FF9933]"]):not([class*="bg-[#138808]"]):not([class*="bg-emerald"]):not([class*="bg-red"]) {
@@ -212,9 +256,21 @@ html.dark {
 .high-contrast header a:hover {
   color: #FF9933 !important;
 }
-.high-contrast [class*="from-orange-50"] {
+
+/* Gradient Cards in SchemeDetail & Hero */
+.high-contrast section[class*="from-orange-50"] {
   background-image: none !important;
   background-color: transparent !important;
+}
+.high-contrast div[class*="from-orange-50"] {
+  background-image: none !important;
+  background-color: #2b1807 !important;
+  border-color: #7c2d12 !important;
+}
+.high-contrast div[class*="from-blue-50"] {
+  background-image: none !important;
+  background-color: #0d1d36 !important;
+  border-color: #1e3a8a !important;
 }
 
 /* 10. Dividers & Borders */

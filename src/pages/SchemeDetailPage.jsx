@@ -29,12 +29,13 @@ export default function SchemeDetailPage({ id }) {
   return (
     <div class="py-8 px-4 sm:px-6">
       <div class="max-w-4xl mx-auto mb-4">
-        <a
-          href="javascript:history.back()"
+        <button
+          type="button"
+          onClick={() => window.history.length > 1 ? window.history.back() : (window.location.hash = '#/browse')}
           class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 hover:text-[#FF9933] transition-colors"
         >
           ← Back
-        </a>
+        </button>
       </div>
 
       <SchemeDetail
