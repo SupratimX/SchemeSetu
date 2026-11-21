@@ -3,7 +3,6 @@ import { t } from '../utils/i18n.js';
 
 export default function CategoryGrid({ onSelectCategory }) {
   const lang = language.value;
-
   const categories = [
     { id: 'agriculture', icon: '🌾', label: t('browse.cat_agriculture', {}, lang), color: 'bg-green-50 hover:bg-green-100 border-green-200 text-green-900' },
     { id: 'education', icon: '📚', label: t('browse.cat_education', {}, lang), color: 'bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-900' },
@@ -15,17 +14,11 @@ export default function CategoryGrid({ onSelectCategory }) {
     { id: 'skill', icon: '🎓', label: t('browse.cat_skill', {}, lang), color: 'bg-indigo-50 hover:bg-indigo-100 border-indigo-200 text-indigo-900' }
   ];
 
-  const handleClick = (catId) => {
-    if (onSelectCategory) {
-      onSelectCategory(catId);
-    } else {
-      window.location.hash = `#/browse?category=${catId}`;
-    }
-  };
+  const handleClick = (id) => onSelectCategory ? onSelectCategory(id) : (window.location.hash = `#/browse?category=${id}`);
 
   return (
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-      {categories.map((c) => (
+      {categories.map(c => (
         <button
           key={c.id}
           type="button"

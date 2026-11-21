@@ -12,80 +12,50 @@ import DocumentChecklistPage from './pages/DocumentChecklistPage.jsx';
 import { language, fontSize, highContrast } from './store/profile.js';
 import { initLanguage } from './utils/i18n.js';
 
-function getRoute() {
-  const hash = window.location.hash || '#/';
-  const clean = hash.replace(/^#/, '') || '/';
-  return clean.split('?')[0]; // Remove query string from route matching
-}
+const getRoute = () => (window.location.hash || '#/').replace(/^#/, '').split('?')[0] || '/';
+
+const staticRoutes = {
+  '/': <Home />,
+  '/quiz': <Quiz />,
+  '/results': <Results />,
+  '/browse': <Browse />,
+  '/saved': <Saved />,
+  '/about': <About />,
+  '/checklist': <DocumentChecklistPage />
+};
 
 export default function App() {
   const [route, setRoute] = useState(getRoute);
+  const lang = language.value, fs = fontSize.value, hc = highContrast.value;
 
-  const lang = language.value;
-  const fs = fontSize.value;
-  const hc = highContrast.value;
+  useEffect(() => initLanguage(lang), [lang]);
 
   useEffect(() => {
-    initLanguage(lang);
-  }, [lang]);
-
-  // Sync dark / high-contrast class on <html> and <body>
-  useEffect(() => {
-    if (hc) {
-      document.documentElement.classList.add('high-contrast', 'dark');
-      document.body.classList.add('high-contrast', 'dark');
-    } else {
-      document.documentElement.classList.remove('high-contrast', 'dark');
-      document.body.classList.remove('high-contrast', 'dark');
-    }
+    ['documentElement', 'body'].forEach(el => {
+      document[el].classList.toggle('high-contrast', hc);
+      document[el].classList.toggle('dark', hc);
+    });
   }, [hc]);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setRoute(getRoute());
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    const onHash = () => { setRoute(getRoute()); window.scrollTo({ top: 0, behavior: 'instant' }); };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  // Simple, robust client router
-  let pageComponent;
   const schemeMatch = route.match(/^\/scheme\/(.+)$/);
-
-  if (route === '/' || route === '') {
-    pageComponent = <Home />;
-  } else if (route === '/quiz') {
-    pageComponent = <Quiz />;
-  } else if (route === '/results') {
-    pageComponent = <Results />;
-  } else if (schemeMatch) {
-    pageComponent = <SchemeDetailPage id={schemeMatch[1]} />;
-  } else if (route === '/browse') {
-    pageComponent = <Browse />;
-  } else if (route === '/saved') {
-    pageComponent = <Saved />;
-  } else if (route === '/about') {
-    pageComponent = <About />;
-  } else if (route === '/checklist') {
-    pageComponent = <DocumentChecklistPage />;
-  } else {
-    pageComponent = <Home />;
-  }
+  const page = schemeMatch ? <SchemeDetailPage id={schemeMatch[1]} /> : (staticRoutes[route] || <Home />);
 
   const containerClasses = [
     'min-h-screen flex flex-col',
-    hc ? 'high-contrast dark' : '',
+    hc && 'high-contrast dark',
     fs === 'large' ? 'font-large' : fs === 'x-large' ? 'font-x-large' : ''
   ].filter(Boolean).join(' ');
 
   return (
     <div class={containerClasses}>
       <Header />
-      <main class="flex-1">
-        {pageComponent}
-      </main>
+      <main class="flex-1">{page}</main>
       <Footer />
     </div>
   );

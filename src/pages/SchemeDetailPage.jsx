@@ -1,4 +1,3 @@
-import { useMemo } from 'preact/hooks';
 import { profile } from '../store/profile.js';
 import SchemeDetail from '../components/SchemeDetail.jsx';
 import centralSchemes from '../data/schemes/central.json';
@@ -6,8 +5,9 @@ import assamSchemes from '../data/schemes/assam.json';
 import documentsMeta from '../data/documents.json';
 import { evaluateScheme } from '../engine/evaluate.js';
 
+const allSchemes = [...centralSchemes, ...assamSchemes];
+
 export default function SchemeDetailPage({ id }) {
-  const allSchemes = useMemo(() => [...centralSchemes, ...assamSchemes], []);
   const scheme = allSchemes.find(s => s.id === id);
 
   if (!scheme) {
@@ -23,7 +23,6 @@ export default function SchemeDetailPage({ id }) {
     );
   }
 
-  // Re-evaluate against the current profile answers
   const evaluation = evaluateScheme(scheme, profile.value || {});
 
   return (
@@ -37,12 +36,7 @@ export default function SchemeDetailPage({ id }) {
           ← Back
         </button>
       </div>
-
-      <SchemeDetail
-        scheme={scheme}
-        evaluation={evaluation}
-        documentsMeta={documentsMeta}
-      />
+      <SchemeDetail scheme={scheme} evaluation={evaluation} documentsMeta={documentsMeta} />
     </div>
   );
 }

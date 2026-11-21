@@ -8,11 +8,7 @@
   --color-navy: #000080;
 }
 
-* {
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-}
-
+* { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   min-height: 100vh;
@@ -20,277 +16,70 @@ body {
   color: #1f2937;
   overflow-x: hidden;
 }
+.font-large { font-size: 1.125rem; }
+.font-x-large { font-size: 1.25rem; }
 
-/* Accessibility: Font size multipliers */
-.font-large {
-  font-size: 1.125rem;
-}
-.font-x-large {
-  font-size: 1.25rem;
-}
+/* DARK / HIGH CONTRAST (Leaves Light Mode 100% Intact) */
+.high-contrast, .high-contrast body, html.high-contrast, html.dark { background-color: #0d1117 !important; color: #f0f6fc !important; }
+.high-contrast .bg-white { background-color: #161b22 !important; color: #f0f6fc !important; border-color: #30363d !important; }
+.high-contrast .bg-gray-50, .high-contrast [class*="bg-gray-50"] { background-color: #1a202c !important; color: #f0f6fc !important; border-color: #30363d !important; }
+.high-contrast .bg-gray-100, .high-contrast [class*="bg-gray-100"] { background-color: #21262d !important; color: #f0f6fc !important; border-color: #30363d !important; }
+.high-contrast .bg-gray-200 { background-color: #2d333b !important; color: #f0f6fc !important; }
+.high-contrast .bg-gray-800, .high-contrast [class*="bg-gray-800"] { background-color: #282e36 !important; color: #ffffff !important; }
+.high-contrast .bg-gray-900:not(footer), .high-contrast [class*="bg-gray-900"]:not(footer) { background-color: #30363d !important; color: #ffffff !important; border-color: #484f58 !important; }
+.high-contrast .bg-gray-900:not(footer):hover, .high-contrast [class*="bg-gray-900"]:not(footer):hover { background-color: #3f4752 !important; }
 
-/* ============================================================
-   DARK MODE / HIGH CONTRAST MODE (Leaves Light Mode 100% Intact)
-   ============================================================ */
+/* Text Overrides */
+.high-contrast .text-gray-900, .high-contrast .text-gray-800 { color: #ffffff !important; }
+.high-contrast .text-gray-700, .high-contrast .text-gray-600 { color: #e6edf3 !important; }
+.high-contrast .text-gray-500, .high-contrast .text-gray-400 { color: #8b949e !important; }
 
-/* 1. Page Background & Text Base */
-.high-contrast,
-.high-contrast body,
-html.high-contrast,
-html.dark {
-  background-color: #0d1117 !important;
-  color: #f0f6fc !important;
-}
+/* Form inputs */
+.high-contrast input, .high-contrast select, .high-contrast textarea { background-color: #0d1117 !important; color: #ffffff !important; border-color: #38444d !important; }
+.high-contrast input:focus, .high-contrast select:focus { border-color: #FF9933 !important; outline: none !important; }
+.high-contrast select option { background-color: #161b22 !important; color: #ffffff !important; }
+.high-contrast input::placeholder { color: #8b949e !important; }
 
-/* 2. White Cards & Containers */
-.high-contrast .bg-white {
-  background-color: #161b22 !important;
-  color: #f0f6fc !important;
-  border-color: #30363d !important;
-}
+/* Tinted cards */
+.high-contrast [class*="bg-orange-50"], .high-contrast [class*="bg-orange-100"] { background-color: #2b1807 !important; color: #fed7aa !important; border-color: #7c2d12 !important; }
+.high-contrast [class*="bg-amber-50"], .high-contrast [class*="bg-amber-100"] { background-color: #2e1d08 !important; color: #fef08a !important; border-color: #854d0e !important; }
+.high-contrast [class*="bg-blue-50"], .high-contrast [class*="bg-blue-100"] { background-color: #0d1d36 !important; color: #bfdbfe !important; border-color: #1e3a8a !important; }
+.high-contrast [class*="bg-green-50"], .high-contrast [class*="bg-green-100"], .high-contrast [class*="bg-emerald-50"], .high-contrast [class*="bg-emerald-100"] { background-color: #0a2618 !important; color: #a7f3d0 !important; border-color: #065f46 !important; }
+.high-contrast [class*="bg-purple-50"], .high-contrast [class*="bg-purple-100"] { background-color: #231138 !important; color: #e9d5ff !important; border-color: #6b21a8 !important; }
+.high-contrast [class*="bg-pink-50"], .high-contrast [class*="bg-pink-100"] { background-color: #2e0e1e !important; color: #fbcfe8 !important; border-color: #9d174d !important; }
+.high-contrast [class*="bg-indigo-50"], .high-contrast [class*="bg-indigo-100"] { background-color: #131738 !important; color: #c7d2fe !important; border-color: #3730a3 !important; }
+.high-contrast [class*="bg-red-50"], .high-contrast [class*="bg-red-100"], .high-contrast [class*="bg-rose-50"], .high-contrast [class*="bg-rose-100"] { background-color: #2d1013 !important; color: #fecaca !important; border-color: #991b1b !important; }
 
-/* 3. Soft Gray Backgrounds (Panels, Step cards, Form containers) */
-.high-contrast .bg-gray-50,
-.high-contrast [class*="bg-gray-50"] {
-  background-color: #1a202c !important;
-  color: #f0f6fc !important;
-  border-color: #30363d !important;
-}
-.high-contrast .bg-gray-100,
-.high-contrast [class*="bg-gray-100"] {
-  background-color: #21262d !important;
-  color: #f0f6fc !important;
-  border-color: #30363d !important;
-}
-.high-contrast .bg-gray-200 {
-  background-color: #2d333b !important;
-  color: #f0f6fc !important;
-}
+/* Status / Category colors */
+.high-contrast .text-green-900, .high-contrast .text-green-800, .high-contrast .text-green-700 { color: #86efac !important; }
+.high-contrast .text-blue-900, .high-contrast .text-blue-800, .high-contrast .text-blue-700, .high-contrast .text-blue-600 { color: #93c5fd !important; }
+.high-contrast .text-red-900, .high-contrast .text-red-800, .high-contrast .text-red-700,
+.high-contrast .text-rose-900, .high-contrast .text-rose-800, .high-contrast .text-rose-700, .high-contrast .text-rose-600 { color: #fca5a5 !important; }
+.high-contrast .text-amber-900, .high-contrast .text-amber-800, .high-contrast .text-amber-700, .high-contrast .text-amber-600 { color: #fde047 !important; }
+.high-contrast .text-purple-900, .high-contrast .text-purple-800, .high-contrast .text-purple-700 { color: #d8b4fe !important; }
+.high-contrast .text-pink-900, .high-contrast .text-pink-800, .high-contrast .text-pink-700 { color: #f472b6 !important; }
+.high-contrast .text-orange-900, .high-contrast .text-orange-800, .high-contrast .text-orange-700 { color: #fdba74 !important; }
+.high-contrast .text-indigo-900, .high-contrast .text-indigo-800, .high-contrast .text-indigo-700 { color: #a5b4fc !important; }
+.high-contrast .text-emerald-900, .high-contrast .text-emerald-800, .high-contrast .text-emerald-700, .high-contrast .text-emerald-600 { color: #6ee7b7 !important; }
 
-/* Dark grays inside containers */
-.high-contrast .bg-gray-800,
-.high-contrast [class*="bg-gray-800"] {
-  background-color: #282e36 !important;
-  color: #ffffff !important;
-}
-.high-contrast .bg-gray-900:not(footer),
-.high-contrast [class*="bg-gray-900"]:not(footer) {
-  background-color: #30363d !important;
-  color: #ffffff !important;
-  border-color: #484f58 !important;
-}
-.high-contrast .bg-gray-900:not(footer):hover,
-.high-contrast [class*="bg-gray-900"]:not(footer):hover {
-  background-color: #3f4752 !important;
-}
+/* Buttons & Header */
+.high-contrast button:not([class*="bg-[#FF9933]"]):not([class*="bg-[#138808]"]):not([class*="bg-emerald"]):not([class*="bg-red"]) { border-color: #30363d; }
+.high-contrast .hover\:bg-gray-50:hover, .high-contrast .hover\:bg-gray-100:hover, .high-contrast .hover\:bg-gray-200:hover { background-color: #21262d !important; }
+.high-contrast header { background-color: rgba(13, 17, 23, 0.95) !important; border-color: #30363d !important; }
+.high-contrast header a { color: #e6edf3 !important; }
+.high-contrast header a:hover { color: #FF9933 !important; }
 
-/* 4. Text Contrast Overrides - Prevent matching background */
-.high-contrast .text-gray-900,
-.high-contrast .text-gray-800 {
-  color: #ffffff !important;
-}
-.high-contrast .text-gray-700,
-.high-contrast .text-gray-600 {
-  color: #e6edf3 !important;
-}
-.high-contrast .text-gray-500 {
-  color: #8b949e !important;
-}
-.high-contrast .text-gray-400 {
-  color: #8b949e !important;
-}
+/* Card Gradients */
+.high-contrast section[class*="from-orange-50"] { background-image: none !important; background-color: transparent !important; }
+.high-contrast div[class*="from-orange-50"] { background-image: none !important; background-color: #2b1807 !important; border-color: #7c2d12 !important; }
+.high-contrast div[class*="from-blue-50"] { background-image: none !important; background-color: #0d1d36 !important; border-color: #1e3a8a !important; }
 
-/* 5. Form Elements (Inputs, Selects, Dropdowns, Placeholders) */
-.high-contrast input,
-.high-contrast select,
-.high-contrast textarea {
-  background-color: #0d1117 !important;
-  color: #ffffff !important;
-  border-color: #38444d !important;
-}
-.high-contrast input:focus,
-.high-contrast select:focus {
-  border-color: #FF9933 !important;
-  outline: none !important;
-}
-.high-contrast select option {
-  background-color: #161b22 !important;
-  color: #ffffff !important;
-}
-.high-contrast input::placeholder {
-  color: #8b949e !important;
-}
+/* Borders */
+.high-contrast [class*="border-gray-100"], .high-contrast [class*="border-gray-200"], .high-contrast [class*="border-gray-300"],
+.high-contrast .divide-gray-200 > :not([hidden]) ~ :not([hidden]) { border-color: #30363d !important; }
 
-/* 6. Colored Cards & Category Backgrounds */
-/* Orange / Saffron Tints */
-.high-contrast [class*="bg-orange-50"],
-.high-contrast [class*="bg-orange-100"] {
-  background-color: #2b1807 !important;
-  color: #fed7aa !important;
-  border-color: #7c2d12 !important;
-}
-
-/* Amber / Yellow Tints */
-.high-contrast [class*="bg-amber-50"],
-.high-contrast [class*="bg-amber-100"] {
-  background-color: #2e1d08 !important;
-  color: #fef08a !important;
-  border-color: #854d0e !important;
-}
-
-/* Blue Tints */
-.high-contrast [class*="bg-blue-50"],
-.high-contrast [class*="bg-blue-100"] {
-  background-color: #0d1d36 !important;
-  color: #bfdbfe !important;
-  border-color: #1e3a8a !important;
-}
-
-/* Green & Emerald Tints */
-.high-contrast [class*="bg-green-50"],
-.high-contrast [class*="bg-green-100"],
-.high-contrast [class*="bg-emerald-50"],
-.high-contrast [class*="bg-emerald-100"] {
-  background-color: #0a2618 !important;
-  color: #a7f3d0 !important;
-  border-color: #065f46 !important;
-}
-
-/* Purple Tints */
-.high-contrast [class*="bg-purple-50"],
-.high-contrast [class*="bg-purple-100"] {
-  background-color: #231138 !important;
-  color: #e9d5ff !important;
-  border-color: #6b21a8 !important;
-}
-
-/* Pink Tints */
-.high-contrast [class*="bg-pink-50"],
-.high-contrast [class*="bg-pink-100"] {
-  background-color: #2e0e1e !important;
-  color: #fbcfe8 !important;
-  border-color: #9d174d !important;
-}
-
-/* Indigo Tints */
-.high-contrast [class*="bg-indigo-50"],
-.high-contrast [class*="bg-indigo-100"] {
-  background-color: #131738 !important;
-  color: #c7d2fe !important;
-  border-color: #3730a3 !important;
-}
-
-/* Red & Rose Tints */
-.high-contrast [class*="bg-red-50"],
-.high-contrast [class*="bg-red-100"],
-.high-contrast [class*="bg-rose-50"],
-.high-contrast [class*="bg-rose-100"] {
-  background-color: #2d1013 !important;
-  color: #fecaca !important;
-  border-color: #991b1b !important;
-}
-
-/* 7. Category & Status Text Overrides in Dark Mode (High Legibility) */
-.high-contrast .text-green-900,
-.high-contrast .text-green-800,
-.high-contrast .text-green-700 { color: #86efac !important; }
-
-.high-contrast .text-blue-900,
-.high-contrast .text-blue-800,
-.high-contrast .text-blue-700,
-.high-contrast .text-blue-600 { color: #93c5fd !important; }
-
-.high-contrast .text-red-900,
-.high-contrast .text-red-800,
-.high-contrast .text-red-700 { color: #fca5a5 !important; }
-
-.high-contrast .text-rose-900,
-.high-contrast .text-rose-800,
-.high-contrast .text-rose-700,
-.high-contrast .text-rose-600 { color: #fca5a5 !important; }
-
-.high-contrast .text-amber-900,
-.high-contrast .text-amber-800,
-.high-contrast .text-amber-700,
-.high-contrast .text-amber-600 { color: #fde047 !important; }
-
-.high-contrast .text-purple-900,
-.high-contrast .text-purple-800,
-.high-contrast .text-purple-700 { color: #d8b4fe !important; }
-
-.high-contrast .text-pink-900,
-.high-contrast .text-pink-800,
-.high-contrast .text-pink-700 { color: #f472b6 !important; }
-
-.high-contrast .text-orange-900,
-.high-contrast .text-orange-800,
-.high-contrast .text-orange-700 { color: #fdba74 !important; }
-
-.high-contrast .text-indigo-900,
-.high-contrast .text-indigo-800,
-.high-contrast .text-indigo-700 { color: #a5b4fc !important; }
-
-.high-contrast .text-emerald-900,
-.high-contrast .text-emerald-800,
-.high-contrast .text-emerald-700,
-.high-contrast .text-emerald-600 { color: #6ee7b7 !important; }
-
-/* 8. Radio Buttons & Checkbox Cards */
-.high-contrast button:not([class*="bg-[#FF9933]"]):not([class*="bg-[#138808]"]):not([class*="bg-emerald"]):not([class*="bg-red"]) {
-  border-color: #30363d;
-}
-.high-contrast .hover\:bg-gray-50:hover,
-.high-contrast .hover\:bg-gray-100:hover,
-.high-contrast .hover\:bg-gray-200:hover {
-  background-color: #21262d !important;
-}
-
-/* 9. Header & Footer */
-.high-contrast header {
-  background-color: rgba(13, 17, 23, 0.95) !important;
-  border-color: #30363d !important;
-}
-.high-contrast header a {
-  color: #e6edf3 !important;
-}
-.high-contrast header a:hover {
-  color: #FF9933 !important;
-}
-
-/* Gradient Cards in SchemeDetail & Hero */
-.high-contrast section[class*="from-orange-50"] {
-  background-image: none !important;
-  background-color: transparent !important;
-}
-.high-contrast div[class*="from-orange-50"] {
-  background-image: none !important;
-  background-color: #2b1807 !important;
-  border-color: #7c2d12 !important;
-}
-.high-contrast div[class*="from-blue-50"] {
-  background-image: none !important;
-  background-color: #0d1d36 !important;
-  border-color: #1e3a8a !important;
-}
-
-/* 10. Dividers & Borders */
-.high-contrast [class*="border-gray-100"],
-.high-contrast [class*="border-gray-200"],
-.high-contrast [class*="border-gray-300"] {
-  border-color: #30363d !important;
-}
-.high-contrast .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
-  border-color: #30363d !important;
-}
-
-/* Print CSS */
+/* Print */
 @media print {
-  header, footer, nav, button, .no-print {
-    display: none !important;
-  }
-  body {
-    background: #fff !important;
-    color: #000 !important;
-    font-size: 12pt;
-  }
+  header, footer, nav, button, .no-print { display: none !important; }
+  body { background: #fff !important; color: #000 !important; font-size: 12pt; }
 }

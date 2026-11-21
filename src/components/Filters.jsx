@@ -25,42 +25,37 @@ export default function Filters({ filters, onChange, onReset }) {
           {t('browse.filter_level', {}, lang)} & {t('browse.filter_category', {}, lang)}
         </h3>
         {onReset && (
-          <button
-            onClick={onReset}
-            class="text-xs text-[#FF9933] font-semibold hover:underline"
-          >
+          <button onClick={onReset} class="text-xs text-[#FF9933] font-semibold hover:underline">
             {t('browse.reset_filters', {}, lang)}
           </button>
         )}
       </div>
 
-      {/* Level Filter (All / Central / State) */}
       <div>
-        <label class="block text-xs font-semibold text-gray-600 mb-2">
-          {t('browse.filter_level', {}, lang)}
-        </label>
+        <label class="block text-xs font-semibold text-gray-600 mb-2">{t('browse.filter_level', {}, lang)}</label>
         <div class="grid grid-cols-3 gap-2">
-          {['all', 'central', 'state'].map(lvl => (
+          {[
+            { id: 'all', label: t('browse.level_all', {}, lang) },
+            { id: 'central', label: t('browse.level_central', {}, lang) },
+            { id: 'state', label: t('browse.level_state', {}, lang) }
+          ].map(lvl => (
             <button
-              key={lvl}
-              onClick={() => onChange({ ...filters, level: lvl })}
+              key={lvl.id}
+              onClick={() => onChange({ ...filters, level: lvl.id })}
               class={`py-2 px-3 text-xs font-bold rounded-xl border transition-all ${
-                filters.level === lvl
+                filters.level === lvl.id
                   ? 'bg-[#FF9933] text-white border-[#FF9933] shadow-sm'
                   : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
               }`}
             >
-              {lvl === 'all' ? t('browse.level_all', {}, lang) : lvl === 'central' ? t('browse.level_central', {}, lang) : t('browse.level_state', {}, lang)}
+              {lvl.label}
             </button>
           ))}
         </div>
       </div>
 
-      {/* Deadline / Application Window Filter */}
       <div>
-        <label class="block text-xs font-semibold text-gray-600 mb-2">
-          Application Window
-        </label>
+        <label class="block text-xs font-semibold text-gray-600 mb-2">Application Window</label>
         <div class="grid grid-cols-1 gap-1.5">
           {[
             { id: 'all', label: 'All Schemes' },
@@ -82,11 +77,8 @@ export default function Filters({ filters, onChange, onReset }) {
         </div>
       </div>
 
-      {/* Category Pills */}
       <div>
-        <label class="block text-xs font-semibold text-gray-600 mb-2">
-          {t('browse.filter_category', {}, lang)}
-        </label>
+        <label class="block text-xs font-semibold text-gray-600 mb-2">{t('browse.filter_category', {}, lang)}</label>
         <div class="flex flex-wrap gap-1.5">
           {categories.map(cat => (
             <button
@@ -104,11 +96,8 @@ export default function Filters({ filters, onChange, onReset }) {
         </div>
       </div>
 
-      {/* Sort By */}
       <div>
-        <label class="block text-xs font-semibold text-gray-600 mb-2">
-          {t('browse.sort', {}, lang)}
-        </label>
+        <label class="block text-xs font-semibold text-gray-600 mb-2">{t('browse.sort', {}, lang)}</label>
         <select
           value={filters.sort || 'relevance'}
           onChange={(e) => onChange({ ...filters, sort: e.target.value })}

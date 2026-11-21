@@ -1,82 +1,32 @@
 // profile.js - App State Store using @preact/signals
 import { signal } from '@preact/signals';
 
-function loadStorage(key, defaultValue) {
-  try {
-    const item = localStorage.getItem('schemesetu_' + key);
-    return item ? JSON.parse(item) : defaultValue;
-  } catch (e) {
-    return defaultValue;
-  }
-}
+const load = (k, d) => { try { const v = localStorage.getItem('schemesetu_' + k); return v ? JSON.parse(v) : d; } catch { return d; } };
+const save = (k, v) => { try { localStorage.setItem('schemesetu_' + k, JSON.stringify(v)); } catch {} };
 
-function saveStorage(key, value) {
-  try {
-    localStorage.setItem('schemesetu_' + key, JSON.stringify(value));
-  } catch (e) {
-    // quota exceeded or private mode
-  }
-}
+export const profile = signal(load('profile', {}));
+export const savedSchemes = signal(new Set(load('saved', [])));
+export const language = signal(load('lang', 'en'));
+export const fontSize = signal(load('font_size', 'normal'));
+export const highContrast = signal(load('high_contrast', false));
+export const quizResults = signal(load('results', null));
+export const checkedDocuments = signal(load('checked_docs', {}));
 
-export const profile = signal(loadStorage('profile', {}));
-export const savedSchemes = signal(new Set(loadStorage('saved', [])));
-export const language = signal(loadStorage('lang', 'en'));
-export const fontSize = signal(loadStorage('font_size', 'normal'));
-export const highContrast = signal(loadStorage('high_contrast', false));
-export const quizResults = signal(loadStorage('results', null));
-export const checkedDocuments = signal(loadStorage('checked_docs', {}));
-
-export function setProfile(answers) {
-  profile.value = { ...profile.value, ...answers };
-  saveStorage('profile', profile.value);
-}
-
-export function resetProfile() {
-  profile.value = {};
-  quizResults.value = null;
-  saveStorage('profile', {});
-  saveStorage('results', null);
-}
-
-export function setQuizResults(results) {
-  quizResults.value = results;
-  saveStorage('results', results);
-}
-
-export function toggleSaveScheme(schemeId) {
-  const current = new Set(savedSchemes.value);
-  if (current.has(schemeId)) {
-    current.delete(schemeId);
-  } else {
-    current.add(schemeId);
-  }
-  savedSchemes.value = current;
-  saveStorage('saved', Array.from(current));
-}
-
-export function isSchemeSaved(schemeId) {
-  return savedSchemes.value.has(schemeId);
-}
-
-export function setLanguage(lang) {
-  language.value = lang;
-  saveStorage('lang', lang);
-  document.documentElement.lang = lang;
-}
-
-export function setFontSize(size) {
-  fontSize.value = size;
-  saveStorage('font_size', size);
-}
-
-export function toggleHighContrast() {
-  highContrast.value = !highContrast.value;
-  saveStorage('high_contrast', highContrast.value);
-}
-
-export function toggleDocumentCheck(docId) {
-  const current = { ...checkedDocuments.value };
-  current[docId] = !current[docId];
-  checkedDocuments.value = current;
-  saveStorage('checked_docs', current);
-}
+export const setProfile = (a) => { profile.value = { ...profile.value, ...a }; save('profile', profile.value); };
+export const resetProfile = () => { profile.value = {}; quizResults.value = null; save('profile', {}); save('results', null); };
+export const setQuizResults = (r) => { quizResults.value = r; save('results', r); };
+export const toggleSaveScheme = (id) => {
+  const s = new Set(savedSchemes.value);
+  s.has(id) ? s.delete(id) : s.add(id);
+  savedSchemes.value = s;
+  save('saved', Array.from(s));
+};
+export const isSchemeSaved = (id) => savedSchemes.value.has(id);
+export const setLanguage = (l) => { language.value = l; save('lang', l); document.documentElement.lang = l; };
+export const setFontSize = (s) => { fontSize.value = s; save('font_size', s); };
+export const toggleHighContrast = () => { highContrast.value = !highContrast.value; save('high_contrast', highContrast.value); };
+export const toggleDocumentCheck = (id) => {
+  const cur = { ...checkedDocuments.value, [id]: !checkedDocuments.value[id] };
+  checkedDocuments.value = cur;
+  save('checked_docs', cur);
+};
