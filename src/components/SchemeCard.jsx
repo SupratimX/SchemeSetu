@@ -45,7 +45,7 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
         title: name,
         text: `Check out ${name} on SchemeSetu:`,
         url
-      }).catch(() => {});
+      }).catch(() => { });
     } else {
       navigator.clipboard.writeText(url);
       alert(t('common.copied', {}, lang));

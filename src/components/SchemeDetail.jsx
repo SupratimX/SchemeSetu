@@ -23,7 +23,7 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
   const handleShare = () => {
     const url = window.location.href;
     if (navigator.share) {
-      navigator.share({ title: name, text: summary, url }).catch(() => {});
+      navigator.share({ title: name, text: summary, url }).catch(() => { });
     } else {
       navigator.clipboard.writeText(url);
       alert(t('common.copied', {}, lang));
@@ -57,9 +57,8 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
           <div class="flex items-center gap-2">
             <button
               onClick={() => toggleSaveScheme(scheme.id)}
-              class={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-colors ${
-                saved ? 'bg-orange-50 text-[#FF9933] border-orange-200' : 'border-gray-300 text-gray-700 hover:bg-gray-50'
-              }`}
+              class={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-colors ${saved ? 'bg-orange-50 text-[#FF9933] border-orange-200' : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
             >
               <svg class="w-4 h-4" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
@@ -143,9 +142,8 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
               return (
                 <div key={i} class="p-3.5 flex items-center justify-between gap-3 text-sm">
                   <div class="flex items-center gap-2.5">
-                    <span class={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
-                      passed ? 'bg-emerald-100 text-emerald-700' : (unknown ? 'bg-amber-100 text-amber-700' : 'bg-rose-100 text-rose-700')
-                    }`}>
+                    <span class={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${passed ? 'bg-emerald-100 text-emerald-700' : (unknown ? 'bg-amber-100 text-amber-700' : 'bg-rose-100 text-rose-700')
+                      }`}>
                       {passed ? '✓' : (unknown ? '?' : '✗')}
                     </span>
                     <span class="text-gray-800 font-medium">{explainReason(r, lang)}</span>
@@ -177,9 +175,8 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
                 <div
                   key={docId}
                   onClick={() => toggleDocumentCheck(docId)}
-                  class={`p-3.5 rounded-xl border flex items-start gap-3 cursor-pointer transition-all ${
-                    isChecked ? 'bg-emerald-50/70 border-emerald-300' : 'bg-white border-gray-200 hover:bg-gray-50'
-                  }`}
+                  class={`p-3.5 rounded-xl border flex items-start gap-3 cursor-pointer transition-all ${isChecked ? 'bg-emerald-50/70 border-emerald-300' : 'bg-white border-gray-200 hover:bg-gray-50'
+                    }`}
                 >
                   <input
                     type="checkbox"
