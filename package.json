@@ -7,7 +7,8 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview --host",
-    "test": "node scripts/validate-data.js && node scripts/audit-security.js",
+    "test": "node scripts/validate-data.js && node scripts/audit-security.js && node --test tests/*.test.js",
+    "test:engine": "node --test tests/*.test.js",
     "audit:security": "node scripts/audit-security.js",
     "audit:data": "node scripts/validate-data.js"
   },

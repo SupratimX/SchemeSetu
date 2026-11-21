@@ -1,10 +1,20 @@
 // evaluate.js - Rule evaluation engine for SchemeSetu
 import { applyOp } from './operators.js';
 
+/**
+ * Normalizes raw survey responses into structured profile attributes.
+ * @param {Object} rawProfile - Raw profile key-values from questionnaire or storage.
+ * @returns {Object} Cleaned profile with coerced numbers and flattened special flags.
+ */
 export function normalizeProfile(rawProfile = {}) {
   const norm = { ...rawProfile };
-  if (norm.income !== undefined && norm.annualIncome === undefined) norm.annualIncome = Number(norm.income);
-  else if (norm.annualIncome !== undefined && norm.income === undefined) norm.income = Number(norm.annualIncome);
+  if (norm.income !== undefined && norm.income !== null && norm.income !== '') {
+    norm.income = Number(norm.income);
+    norm.annualIncome = norm.income;
+  } else if (norm.annualIncome !== undefined && norm.annualIncome !== null && norm.annualIncome !== '') {
+    norm.annualIncome = Number(norm.annualIncome);
+    norm.income = norm.annualIncome;
+  }
   if (norm.age !== undefined && norm.age !== null && norm.age !== '') norm.age = Number(norm.age);
   if (Array.isArray(norm.special)) {
     ['bpl', 'disability', 'widow', 'minority', 'girlChild', 'landOwner', 'incomeTaxPayer', 'streetVendor'].forEach(s => {
@@ -22,6 +32,12 @@ function evaluateRuleList(rules = [], profile) {
   });
 }
 
+/**
+ * Evaluates a single scheme against a citizen profile and generates a status, match score, and explainable reasons.
+ * @param {Object} scheme - Scheme metadata containing eligibility rules.
+ * @param {Object} rawProfile - Citizen survey answers.
+ * @returns {{ status: 'eligible'|'maybe'|'not_eligible', score: number, reasons: Array<Object>, unknownFields: Array<string> }} Evaluation result.
+ */
 export function evaluateScheme(scheme, rawProfile = {}) {
   const profile = normalizeProfile(rawProfile);
   const elig = scheme.eligibility || { all: [], any: [], none: [] };

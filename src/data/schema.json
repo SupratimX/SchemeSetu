@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SchemeSetuScheme",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "level",
+    "state",
+    "category",
+    "summary",
+    "benefit",
+    "eligibility",
+    "documents",
+    "howToApply",
+    "links",
+    "lastVerified",
+    "verifiedBy",
+    "status",
+    "source"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "name": {
+      "type": "object",
+      "required": ["en", "hi", "as"],
+      "properties": {
+        "en": { "type": "string" },
+        "hi": { "type": "string" },
+        "as": { "type": "string" }
+      }
+    },
+    "level": { "type": "string", "enum": ["central", "state"] },
+    "state": { "type": "string" },
+    "category": { "type": "array", "items": { "type": "string" } },
+    "summary": {
+      "type": "object",
+      "required": ["en", "hi", "as"],
+      "properties": {
+        "en": { "type": "string" },
+        "hi": { "type": "string" },
+        "as": { "type": "string" }
+      }
+    },
+    "benefit": {
+      "type": "object",
+      "required": ["type", "amount"],
+      "properties": {
+        "type": { "type": "string" },
+        "amount": { "type": "string" },
+        "frequency": { "type": "string" }
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "required": ["all", "any", "none"],
+      "properties": {
+        "all": { "type": "array" },
+        "any": { "type": "array" },
+        "none": { "type": "array" }
+      }
+    },
+    "documents": { "type": "array", "items": { "type": "string" } },
+    "howToApply": { "type": "array" },
+    "links": {
+      "type": "object",
+      "properties": {
+        "official": { "type": "string" },
+        "myscheme": { "type": "string" },
+        "helpline": { "type": "string" }
+      }
+    },
+    "lastVerified": { "type": "string" },
+    "verifiedBy": { "type": "string" },
+    "status": { "type": "string" },
+    "source": { "type": "string" }
+  }
+}

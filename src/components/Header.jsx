@@ -23,10 +23,16 @@ export default function Header() {
     { href: '#/about', label: t('nav.about', {}, lang) },
   ];
 
+  const fontSizeLabels = {
+    normal: 'Default font size. Click for larger text',
+    large: 'Large font size. Click for extra-large text',
+    'x-large': 'Extra-large font size. Click for default text'
+  };
+
   return (
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm transition-colors">
       {/* Tricolor top strip */}
-      <div class="h-1 w-full flex">
+      <div class="h-1 w-full flex" aria-hidden="true">
         <div class="h-full w-1/3 bg-[#FF9933]"></div>
         <div class="h-full w-1/3 bg-white"></div>
         <div class="h-full w-1/3 bg-[#138808]"></div>
@@ -34,8 +40,8 @@ export default function Header() {
 
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Brand */}
-        <a href="#/" class="flex items-center gap-2 group text-decoration-none">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#FF9933] to-[#e67300] flex items-center justify-center text-white font-bold text-lg shadow-sm">
+        <a href="#/" class="flex items-center gap-2 group text-decoration-none" aria-label="SchemeSetu Home">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#FF9933] to-[#e67300] flex items-center justify-center text-white font-bold text-lg shadow-sm" aria-hidden="true">
             সে
           </div>
           <div>
@@ -49,12 +55,12 @@ export default function Header() {
         </a>
 
         {/* Desktop Nav */}
-        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
+        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600" aria-label="Main Navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              class="hover:text-[#FF9933] transition-colors py-1"
+              class="hover:text-[#FF9933] transition-colors py-1 focus:outline-none focus:underline"
             >
               {link.label}
             </a>
@@ -65,41 +71,55 @@ export default function Header() {
         <div class="flex items-center gap-2 sm:gap-3">
           {/* Font Size Toggle */}
           <button
+            type="button"
             onClick={cycleFontSize}
-            title="Text Size (A / A+ / A++)"
-            class="px-2.5 py-1 text-xs font-semibold rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors"
+            title="Adjust text size (A / A+ / A++)"
+            aria-label={fontSizeLabels[fs] || 'Adjust text size'}
+            class="px-2.5 py-1 text-xs font-semibold rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-[#FF9933]"
           >
             A{fs === 'large' ? '+' : fs === 'x-large' ? '++' : ''}
           </button>
 
           {/* High Contrast / Dark Mode Toggle */}
           <button
+            type="button"
             onClick={toggleHighContrast}
             title="Toggle Dark / High Contrast Mode"
-            class={`w-8 h-8 rounded-lg flex items-center justify-center border transition-colors ${
+            aria-label="Toggle High Contrast Mode"
+            aria-pressed={hc}
+            class={`w-8 h-8 rounded-lg flex items-center justify-center border transition-colors focus:ring-2 focus:ring-[#FF9933] ${
               hc ? 'bg-black text-white border-black' : 'border-gray-300 text-gray-700 hover:bg-gray-100'
             }`}
           >
-            ◐
+            <span aria-hidden="true">◐</span>
           </button>
 
           {/* Language Switcher */}
-          <div class="flex rounded-lg border border-gray-300 overflow-hidden text-xs font-medium bg-gray-50">
+          <div class="flex rounded-lg border border-gray-300 overflow-hidden text-xs font-medium bg-gray-50" role="group" aria-label="Language selection">
             <button
+              type="button"
               onClick={() => setLanguage('en')}
-              class={`px-2 py-1 transition-colors ${lang === 'en' ? 'bg-[#FF9933] text-white font-bold' : 'text-gray-700 hover:bg-gray-200'}`}
+              aria-label="Switch language to English"
+              aria-pressed={lang === 'en'}
+              class={`px-2 py-1 transition-colors focus:ring-2 focus:ring-[#FF9933] ${lang === 'en' ? 'bg-[#FF9933] text-white font-bold' : 'text-gray-700 hover:bg-gray-200'}`}
             >
               EN
             </button>
             <button
+              type="button"
               onClick={() => setLanguage('hi')}
-              class={`px-2 py-1 transition-colors ${lang === 'hi' ? 'bg-[#FF9933] text-white font-bold' : 'text-gray-700 hover:bg-gray-200'}`}
+              aria-label="Switch language to Hindi"
+              aria-pressed={lang === 'hi'}
+              class={`px-2 py-1 transition-colors focus:ring-2 focus:ring-[#FF9933] ${lang === 'hi' ? 'bg-[#FF9933] text-white font-bold' : 'text-gray-700 hover:bg-gray-200'}`}
             >
               हिं
             </button>
             <button
+              type="button"
               onClick={() => setLanguage('as')}
-              class={`px-2 py-1 transition-colors ${lang === 'as' ? 'bg-[#FF9933] text-white font-bold' : 'text-gray-700 hover:bg-gray-200'}`}
+              aria-label="Switch language to Assamese"
+              aria-pressed={lang === 'as'}
+              class={`px-2 py-1 transition-colors focus:ring-2 focus:ring-[#FF9933] ${lang === 'as' ? 'bg-[#FF9933] text-white font-bold' : 'text-gray-700 hover:bg-gray-200'}`}
             >
               অস
             </button>
@@ -107,11 +127,14 @@ export default function Header() {
 
           {/* Mobile menu trigger */}
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
+            class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-[#FF9933]"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav"
           >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               {mobileMenuOpen ? (
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -124,7 +147,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div class="md:hidden bg-white border-b border-gray-200 px-4 py-3 space-y-2">
+        <nav id="mobile-nav" class="md:hidden bg-white border-b border-gray-200 px-4 py-3 space-y-2" aria-label="Mobile Navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -135,7 +158,7 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-        </div>
+        </nav>
       )}
     </header>
   );

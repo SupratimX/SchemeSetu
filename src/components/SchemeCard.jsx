@@ -40,6 +40,7 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
     <div
       role="button"
       tabIndex={0}
+      aria-label={`${name}, ${currStatus.label}. Click to view details.`}
       onClick={openScheme}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openScheme(); } }}
       class="bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-200 cursor-pointer overflow-hidden flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-[#FF9933]"
@@ -54,11 +55,30 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
           </div>
 
           <div class="flex items-center gap-1">
-            <button onClick={handleShare} title="Share Scheme" class="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+            <button
+              type="button"
+              onClick={handleShare}
+              title={`Share ${name}`}
+              aria-label={`Share ${name}`}
+              class="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-[#FF9933]"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
             </button>
-            <button onClick={handleSaveToggle} title={saved ? 'Remove from Saved' : 'Save Scheme'} class={`p-1.5 rounded-lg transition-colors ${saved ? 'text-[#FF9933] bg-orange-50' : 'text-gray-400 hover:text-gray-700 hover:bg-gray-100'}`}>
-              <svg class="w-4 h-4" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+            <button
+              type="button"
+              onClick={handleSaveToggle}
+              title={saved ? `Remove ${name} from Saved` : `Save ${name}`}
+              aria-label={saved ? `Remove ${name} from saved schemes` : `Save ${name} for offline review`}
+              aria-pressed={saved}
+              class={`p-1.5 rounded-lg transition-colors focus:ring-2 focus:ring-[#FF9933] ${
+                saved ? 'text-[#FF9933] bg-orange-50' : 'text-gray-400 hover:text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              <svg class="w-4 h-4" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+              </svg>
             </button>
           </div>
         </div>
@@ -78,7 +98,7 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
         )}
 
         <div class="mb-3 flex items-center gap-1.5 text-xs font-semibold text-gray-700 bg-gray-50 border border-gray-200/80 px-2.5 py-1.5 rounded-xl">
-          <span class="text-amber-600">⏳</span>
+          <span class="text-amber-600" aria-hidden="true">⏳</span>
           <span class="text-gray-500 font-medium">Last Date:</span>
           <span class="text-gray-900 truncate">{deadline}</span>
         </div>
@@ -89,7 +109,7 @@ export default function SchemeCard({ scheme, evaluation, onCardClick }) {
           <div class="space-y-1 pt-2 border-t border-gray-100 text-xs">
             {topReasons.map((r, i) => (
               <div key={i} class="flex items-center gap-1.5 text-gray-600">
-                <span class={r.type.startsWith('qualifier') ? 'text-emerald-500 font-bold' : 'text-rose-500 font-bold'}>
+                <span class={r.type.startsWith('qualifier') ? 'text-emerald-500 font-bold' : 'text-rose-500 font-bold'} aria-hidden="true">
                   {r.type.startsWith('qualifier') ? '✓' : '✗'}
                 </span>
                 <span class="truncate">{explainReason(r, lang)}</span>
