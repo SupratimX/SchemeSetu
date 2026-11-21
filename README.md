@@ -11,7 +11,7 @@ SchemeSetu simplifies the discovery of government welfare schemes and benefits b
 ## 🏛️ Project Directory Structure
 
 ```text
-promptwar/
+SchemeSetu/
 ├── public/                     # Static assets & public security descriptors
 │   ├── .well-known/security.txt# Vulnerability reporting metadata
 │   ├── favicon.svg             # Vector glyph favicon
