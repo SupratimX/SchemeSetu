@@ -387,4 +387,3 @@ Developed with ❤️ by **Supratim Gogoi**.
 
 > **Civic Disclaimer**: SchemeSetu is an independent civic technology platform created for educational and informational purposes. It is **not** an official government portal and does not represent any government department or authority. All scheme information and eligibility rules are curated from publicly available government gazettes and official ministry notifications. Citizens are advised to verify details with official portals or their local Common Services Centre (CSC) before applying.
 
-This project is licensed under the [MIT License](LICENSE).
