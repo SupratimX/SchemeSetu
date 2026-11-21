@@ -10,5 +10,9 @@ export default defineConfig({
       'react-dom': 'preact/compat',
       'react/jsx-runtime': 'preact/jsx-runtime',
     }
+  },
+  server: {
+    host: '0.0.0.0', // Expose to local network for mobile access
+    port: 5173
   }
 })

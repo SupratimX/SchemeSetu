@@ -4,9 +4,18 @@ import { t } from '../utils/i18n.js';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [qrModalOpen, setQrModalOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
   const lang = language.value;
   const fs = fontSize.value;
   const hc = highContrast.value;
+
+  // Local IP on network (dynamically fallback if on localhost)
+  const networkIp = '10.162.43.45';
+  const mobileUrl = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'
+    ? `${window.location.protocol}//${window.location.host}`
+    : `http://${networkIp}:5173`;
 
   const cycleFontSize = () => {
     if (fs === 'normal') setFontSize('large');
@@ -21,6 +30,12 @@ export default function Header() {
     { href: '#/saved', label: t('nav.saved', {}, lang) },
     { href: '#/about', label: t('nav.about', {}, lang) }
   ];
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(mobileUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm transition-colors">
@@ -60,8 +75,18 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Actions: A11y & Lang */}
+        {/* Actions: Mobile Connect, A11y & Lang */}
         <div class="flex items-center gap-2 sm:gap-3">
+          {/* Mobile QR & Link Button */}
+          <button
+            onClick={() => setQrModalOpen(true)}
+            title="Open on Mobile / Scan QR"
+            class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-orange-50 border border-orange-200 text-[#FF9933] hover:bg-orange-100 transition-colors flex items-center gap-1"
+          >
+            <span>📱</span>
+            <span class="hidden sm:inline">Mobile</span>
+          </button>
+
           {/* Font Size Toggle */}
           <button
             onClick={cycleFontSize}
@@ -71,10 +96,10 @@ export default function Header() {
             A{fs === 'large' ? '+' : fs === 'x-large' ? '++' : ''}
           </button>
 
-          {/* High Contrast Toggle */}
+          {/* High Contrast / Dark Mode Toggle */}
           <button
             onClick={toggleHighContrast}
-            title="Toggle High Contrast"
+            title="Toggle Dark / High Contrast Mode"
             class={`w-8 h-8 rounded-lg flex items-center justify-center border transition-colors ${hc ? 'bg-black text-white border-black' : 'border-gray-300 text-gray-700 hover:bg-gray-100'}`}
           >
             ◐
@@ -132,6 +157,61 @@ export default function Header() {
               {link.label}
             </a>
           ))}
+        </div>
+      )}
+
+      {/* Mobile Connect & QR Code Modal */}
+      {qrModalOpen && (
+        <div
+          class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setQrModalOpen(false)}
+        >
+          <div
+            class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center space-y-4 shadow-2xl border border-gray-100"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div class="w-12 h-12 mx-auto rounded-2xl bg-orange-100 text-[#FF9933] flex items-center justify-center text-2xl font-bold">
+              📱
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">Open on Your Phone</h3>
+              <p class="text-xs text-gray-500 mt-1">
+                Make sure your phone is connected to the same Wi-Fi network.
+              </p>
+            </div>
+
+            {/* QR Code */}
+            <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200 inline-block mx-auto">
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(mobileUrl)}`}
+                alt="QR Code to open on mobile"
+                class="w-44 h-44 rounded-xl mx-auto shadow-sm"
+              />
+            </div>
+
+            {/* Direct URL Box */}
+            <div class="bg-gray-100 p-3 rounded-xl flex items-center justify-between gap-2 text-xs font-mono">
+              <span class="truncate text-gray-800 font-bold">{mobileUrl}</span>
+              <button
+                onClick={handleCopyLink}
+                class="px-2.5 py-1 bg-[#FF9933] text-white rounded-lg font-sans font-bold text-[11px] hover:bg-[#e67300] transition-colors flex-shrink-0"
+              >
+                {copied ? 'Copied! ✓' : 'Copy'}
+              </button>
+            </div>
+
+            <p class="text-[11px] text-gray-400">
+              Point your phone's camera at the QR code, or open the link above in Chrome or Safari.
+            </p>
+
+            <button
+              onClick={() => setQrModalOpen(false)}
+              class="w-full py-2.5 bg-gray-900 text-white font-bold rounded-xl text-xs hover:bg-gray-800 transition-colors"
+            >
+              Close
+            </button>
+          </div>
         </div>
       )}
     </header>
