@@ -1,0 +1,510 @@
+[
+  {
+    "id": "orunodoi",
+    "name": {"en": "Orunodoi Scheme", "hi": "ओरुनोदोई योजना", "as": "অৰুণোদই আঁচনি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["welfare", "women", "income-support"],
+    "summary": {
+      "en": "₹830 per month direct cash transfer to women in BPL families in Assam.",
+      "hi": "असम में BPL परिवारों की महिलाओं को ₹830 प्रति माह प्रत्यक्ष नकद हस्तांतरण।",
+      "as": "অসমৰ BPL পৰিয়ালৰ মহিলাসকলক মাহেকীয়া ₹830 প্ৰত্যক্ষ নগদ হস্তান্তৰ।"
+    },
+    "benefit": {"type": "cash", "amount": "₹830/month", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "gender", "op": "eq", "value": "female"},
+        {"field": "bpl", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "ration-card", "bpl-card", "bank-passbook", "voter-id"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at the nearest Ward Member or Gaon Burah / Village Council", "hi": "निकटतम वार्ड सदस्य या गांव बुरह / ग्राम परिषद में आवेदन करें", "as": "ওচৰৰ ৱাৰ্ড সদস্য বা গাঁও বুঢ়া / গ্ৰাম পৰিষদত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit Aadhaar-linked bank account details and BPL ration card", "hi": "आधार-लिंक्ड बैंक खाता विवरण और BPL राशन कार्ड जमा करें", "as": "আধাৰ-সংযুক্ত বেংক একাউণ্টৰ বিৱৰণ আৰু BPL ৰেচন কাৰ্ড জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://orunodoi.assam.gov.in", "helpline": "1800-345-3611"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://orunodoi.assam.gov.in"
+  },
+  {
+    "id": "assam-oronodoi-2",
+    "name": {"en": "Orunodoi 2.0 (Enhanced)", "hi": "ओरुनोदोई 2.0 (उन्नत संस्करण)", "as": "অৰুণোদই 2.0 (উন্নত সংস্কৰণ)"},
+    "level": "state",
+    "state": "AS",
+    "category": ["welfare", "women", "income-support"],
+    "summary": {
+      "en": "Enhanced version of Orunodoi with increased benefit of ₹1,250/month for eligible women in Assam.",
+      "hi": "असम में पात्र महिलाओं के लिए ₹1,250/माह के बढ़े हुए लाभ के साथ ओरुनोदोई का उन्नत संस्करण।",
+      "as": "অসমৰ যোগ্য মহিলাসকলৰ বাবে ₹1,250/মাহ বৃদ্ধি পোৱা সুবিধাসহ অৰুণোদইৰ উন্নত সংস্কৰণ।"
+    },
+    "benefit": {"type": "cash", "amount": "₹1,250/month", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "gender", "op": "eq", "value": "female"},
+        {"field": "bpl", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "ration-card", "bpl-card", "bank-passbook", "voter-id"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Existing Orunodoi beneficiaries upgraded automatically; new applicants apply at Ward/Village Council", "hi": "मौजूदा ओरुनोदोई लाभार्थी स्वतः अपग्रेड; नए आवेदक वार्ड/ग्राम परिषद में आवेदन करें", "as": "বিদ্যমান অৰুণোদই সুবিধাভোগীসকল স্বয়ংক্ৰিয়ভাৱে আপগ্ৰেড; নতুন আবেদনকাৰীয়ে ৱাৰ্ড/গ্ৰাম পৰিষদত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit updated Aadhaar and income proof for enhanced benefit", "hi": "बढ़े हुए लाभ के लिए अद्यतन आधार और आय प्रमाण जमा करें", "as": "বৃদ্ধি পোৱা সুবিধাৰ বাবে আপডেট কৰা আধাৰ আৰু আয়ৰ প্ৰমাণ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://orunodoi.assam.gov.in", "helpline": "1800-345-3611"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://orunodoi.assam.gov.in"
+  },
+  {
+    "id": "assam-widow-pension",
+    "name": {"en": "Assam Widow Pension Scheme", "hi": "असम विधवा पेंशन योजना", "as": "অসম বিধৱা পেঞ্চন আঁচনি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["pension", "women", "social-security"],
+    "summary": {
+      "en": "Monthly pension for widowed women in Assam to support their livelihood.",
+      "hi": "असम में विधवा महिलाओं को उनकी आजीविका के समर्थन के लिए मासिक पेंशन।",
+      "as": "অসমৰ বিধৱা মহিলাসকলৰ জীৱিকাক সহায় কৰিবলৈ মাহেকীয়া পেঞ্চন।"
+    },
+    "benefit": {"type": "cash", "amount": "₹250–₹500/month", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "gender", "op": "eq", "value": "female"},
+        {"field": "widow", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "voter-id", "bank-passbook", "photo", "income-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at the Circle Office or Social Welfare Department, Assam", "hi": "सर्किल कार्यालय या समाज कल्याण विभाग, असम में आवेदन करें", "as": "চাৰ্কেল কাৰ্যালয় বা সমাজ কল্যাণ বিভাগ, অসমত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit husband's death certificate, Aadhaar and bank passbook", "hi": "पति का मृत्यु प्रमाण पत्र, आधार और बैंक पासबुक जमा करें", "as": "স্বামীৰ মৃত্যু প্ৰমাণপত্ৰ, আধাৰ আৰু বেংক পাছবুক জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://socialwelfare.assam.gov.in", "helpline": "1800-345-3611"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://socialwelfare.assam.gov.in"
+  },
+  {
+    "id": "assam-old-age-pension",
+    "name": {"en": "Assam Old Age Pension Scheme", "hi": "असम वृद्धावस्था पेंशन योजना", "as": "অসম বৃদ্ধাৱস্থা পেঞ্চন আঁচনি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["pension", "elderly"],
+    "summary": {
+      "en": "State-funded monthly pension for BPL senior citizens aged 60 and above in Assam.",
+      "hi": "असम में 60 वर्ष और उससे अधिक आयु के BPL वरिष्ठ नागरिकों के लिए राज्य-वित्त पोषित मासिक पेंशन।",
+      "as": "অসমত 60 বছৰ আৰু তাৰ ওপৰৰ BPL প্ৰবীণ নাগৰিকৰ বাবে ৰাজ্য-পৰিচালিত মাহেকীয়া পেঞ্চন।"
+    },
+    "benefit": {"type": "cash", "amount": "₹250–₹500/month", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "age", "op": "gte", "value": 60},
+        {"field": "bpl", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "bpl-card", "birth-certificate", "bank-passbook", "voter-id"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at the nearest Gram Panchayat or Social Welfare Office in Assam", "hi": "असम में निकटतम ग्राम पंचायत या समाज कल्याण कार्यालय में आवेदन करें", "as": "অসমৰ ওচৰৰ গ্ৰাম পঞ্চায়ত বা সমাজ কল্যাণ কাৰ্যালয়ত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit age proof (birth certificate or Aadhaar), BPL card and bank details", "hi": "आयु प्रमाण (जन्म प्रमाण पत्र या आधार), BPL कार्ड और बैंक विवरण जमा करें", "as": "বয়সৰ প্ৰমাণ (জন্ম প্ৰমাণপত্ৰ বা আধাৰ), BPL কাৰ্ড আৰু বেংকৰ বিৱৰণ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://socialwelfare.assam.gov.in", "helpline": "1800-345-3611"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://socialwelfare.assam.gov.in"
+  },
+  {
+    "id": "assam-disability-pension",
+    "name": {"en": "Assam Disability Pension Scheme", "hi": "असम दिव्यांग पेंशन योजना", "as": "অসম প্ৰতিবন্ধী পেঞ্চন আঁচনি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["pension", "disability"],
+    "summary": {
+      "en": "Monthly pension for persons with disabilities (40%+ disability) in Assam.",
+      "hi": "असम में दिव्यांग व्यक्तियों (40%+ विकलांगता) के लिए मासिक पेंशन।",
+      "as": "অসমত প্ৰতিবন্ধী ব্যক্তিসকলৰ (40%+ প্ৰতিবন্ধকতা) বাবে মাহেকীয়া পেঞ্চন।"
+    },
+    "benefit": {"type": "cash", "amount": "₹500/month", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "disability", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "disability-certificate", "bank-passbook", "voter-id", "income-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at the District Social Welfare Office with disability certificate (40%+)", "hi": "40%+ विकलांगता प्रमाण पत्र के साथ जिला समाज कल्याण कार्यालय में आवेदन करें", "as": "প্ৰতিবন্ধকতাৰ প্ৰমাণপত্ৰ (40%+) লৈ জিলা সমাজ কল্যাণ কাৰ্যালয়ত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Medical board verification and benefit transferred directly to bank account", "hi": "चिकित्सा बोर्ड सत्यापन और लाभ सीधे बैंक खाते में अंतरित किया जाता है", "as": "চিকিৎসা ব'ৰ্ডৰ যাচাইকৰণ আৰু সুবিধা পোনপটীয়াকৈ বেংক একাউণ্টলৈ হস্তান্তৰ কৰা হয়"}}
+    ],
+    "links": {"official": "https://socialwelfare.assam.gov.in", "helpline": "1800-345-3611"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://socialwelfare.assam.gov.in"
+  },
+  {
+    "id": "assam-student-scholarship-sc",
+    "name": {"en": "Assam SC Student Scholarship", "hi": "असम SC छात्र छात्रवृत्ति", "as": "অসম SC শিক্ষাৰ্থী বৃত্তি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["education", "scholarship", "sc-st"],
+    "summary": {
+      "en": "Pre-matric and post-matric scholarships for Scheduled Caste students in Assam.",
+      "hi": "असम में अनुसूचित जाति के छात्रों के लिए प्री-मैट्रिक और पोस्ट-मैट्रिक छात्रवृत्ति।",
+      "as": "অসমৰ তফচিলভুক্ত জাতিৰ শিক্ষাৰ্থীৰ বাবে প্ৰি-মেট্ৰিক আৰু পোষ্ট-মেট্ৰিক বৃত্তি।"
+    },
+    "benefit": {"type": "cash", "amount": "₹1,500 – ₹7,500/year", "frequency": "Annual"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "occupation", "op": "in", "value": ["student"]},
+        {"field": "category", "op": "in", "value": ["sc"]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "caste-certificate", "marksheet-10th", "marksheet-12th", "income-certificate", "bank-passbook", "school-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply online at scholarships.gov.in under Assam SC schemes", "hi": "असम SC योजनाओं के तहत scholarships.gov.in पर ऑनलाइन आवेदन करें", "as": "অসম SC আঁচনিৰ অধীনত scholarships.gov.in-ত অনলাইনত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Get institution verification and submit caste certificate from competent authority", "hi": "संस्था सत्यापन प्राप्त करें और सक्षम प्राधिकारी से जाति प्रमाण पत्र जमा करें", "as": "প্ৰতিষ্ঠানৰ যাচাইকৰণ লওক আৰু সক্ষম কৰ্তৃপক্ষৰ পৰা জাতিৰ প্ৰমাণপত্ৰ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://scholarships.gov.in", "helpline": "0361-2237395"},
+    "applyOnline": true,
+    "deadline": "2026-11-30",
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://scholarships.gov.in"
+  },
+  {
+    "id": "assam-student-scholarship-st",
+    "name": {"en": "Assam ST Student Scholarship", "hi": "असम ST छात्र छात्रवृत्ति", "as": "অসম ST শিক্ষাৰ্থী বৃত্তি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["education", "scholarship", "sc-st"],
+    "summary": {
+      "en": "Pre-matric and post-matric scholarships for Scheduled Tribe students in Assam.",
+      "hi": "असम में अनुसूचित जनजाति के छात्रों के लिए प्री-मैट्रिक और पोस्ट-मैट्रिक छात्रवृत्ति।",
+      "as": "অসমৰ তফচিলভুক্ত জনজাতিৰ শিক্ষাৰ্থীৰ বাবে প্ৰি-মেট্ৰিক আৰু পোষ্ট-মেট্ৰিক বৃত্তি।"
+    },
+    "benefit": {"type": "cash", "amount": "₹1,500 – ₹7,500/year", "frequency": "Annual"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "occupation", "op": "in", "value": ["student"]},
+        {"field": "category", "op": "in", "value": ["st"]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "caste-certificate", "marksheet-10th", "marksheet-12th", "income-certificate", "bank-passbook", "school-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply online at scholarships.gov.in under Assam ST/Tribal schemes", "hi": "असम ST/जनजाति योजनाओं के तहत scholarships.gov.in पर ऑनलाइन आवेदन करें", "as": "অসম ST/জনজাতি আঁচনিৰ অধীনত scholarships.gov.in-ত অনলাইনত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Get verification from Welfare of Plains Tribes and Backward Classes Dept., Assam", "hi": "असम के मैदानी जनजाति और पिछड़ा वर्ग कल्याण विभाग से सत्यापन प्राप्त करें", "as": "অসমৰ সমভূমি জনজাতি আৰু পিছপৰা শ্ৰেণী কল্যাণ বিভাগৰ পৰা যাচাইকৰণ লওক"}}
+    ],
+    "links": {"official": "https://scholarships.gov.in", "helpline": "0361-2237395"},
+    "applyOnline": true,
+    "deadline": "2026-11-30",
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://scholarships.gov.in"
+  },
+  {
+    "id": "assam-student-scholarship-obc",
+    "name": {"en": "Assam OBC Student Scholarship", "hi": "असम OBC छात्र छात्रवृत्ति", "as": "অসম OBC শিক্ষাৰ্থী বৃত্তি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["education", "scholarship"],
+    "summary": {
+      "en": "Pre-matric and post-matric scholarships for Other Backward Classes students in Assam.",
+      "hi": "असम में अन्य पिछड़ा वर्ग के छात्रों के लिए प्री-मैट्रिक और पोस्ट-मैट्रिक छात्रवृत्ति।",
+      "as": "অসমৰ অন্যান্য পিছপৰা শ্ৰেণীৰ শিক্ষাৰ্থীৰ বাবে প্ৰি-মেট্ৰিক আৰু পোষ্ট-মেট্ৰিক বৃত্তি।"
+    },
+    "benefit": {"type": "cash", "amount": "₹1,000 – ₹5,000/year", "frequency": "Annual"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "occupation", "op": "in", "value": ["student"]},
+        {"field": "category", "op": "in", "value": ["obc"]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "caste-certificate", "marksheet-10th", "marksheet-12th", "income-certificate", "bank-passbook", "school-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply online at scholarships.gov.in under Assam OBC schemes", "hi": "असम OBC योजनाओं के तहत scholarships.gov.in पर ऑनलाइन आवेदन करें", "as": "অসম OBC আঁচনিৰ অধীনত scholarships.gov.in-ত অনলাইনত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit OBC certificate issued by Assam Government and income certificate below ₹1 lakh", "hi": "असम सरकार द्वारा जारी OBC प्रमाण पत्र और ₹1 लाख से कम आय प्रमाण जमा करें", "as": "অসম চৰকাৰৰ দ্বাৰা জাৰি কৰা OBC প্ৰমাণপত্ৰ আৰু ₹1 লাখতকৈ কম আয়ৰ প্ৰমাণপত্ৰ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://scholarships.gov.in", "helpline": "0361-2237395"},
+    "applyOnline": true,
+    "deadline": "2026-11-30",
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://scholarships.gov.in"
+  },
+  {
+    "id": "assam-chief-min-samagra",
+    "name": {"en": "Chief Minister's Samagra Gramya Unnayan Yojana (Housing)", "hi": "मुख्यमंत्री समग्र ग्राम्य उन्नयन योजना (आवास)", "as": "মুখ্যমন্ত্ৰীৰ সমগ্ৰ গ্ৰাম্য উন্নয়ন যোজনা (বাসগৃহ)"},
+    "level": "state",
+    "state": "AS",
+    "category": ["housing"],
+    "summary": {
+      "en": "Assam state housing assistance for rural BPL families who could not be covered under PMAY-G.",
+      "hi": "PMAY-G के तहत कवर न होने वाले ग्रामीण BPL परिवारों के लिए असम राज्य आवास सहायता।",
+      "as": "PMAY-G-ৰ অধীনত সামৰি ল'ব নোৱাৰা গ্ৰামীণ BPL পৰিয়ালৰ বাবে অসম ৰাজ্যৰ বাসগৃহ সহায়।"
+    },
+    "benefit": {"type": "cash", "amount": "₹1 lakh (plain) / ₹1.3 lakh (hilly)", "frequency": "In 2–3 instalments"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "bpl", "op": "eq", "value": true},
+        {"field": "area", "op": "eq", "value": "rural"}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "bpl-card", "ration-card", "bank-passbook", "land-record", "income-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Contact Block Development Officer (BDO) in your district, Assam", "hi": "असम में अपने जिले में खंड विकास अधिकारी (BDO) से संपर्क करें", "as": "অসমৰ আপোনাৰ জিলাৰ খণ্ড উন্নয়ন বিষয়াৰ (BDO) সৈতে যোগাযোগ কৰক"}},
+      {"step": 2, "text": {"en": "Submit BPL card, land details and bank passbook for verification and sanction", "hi": "सत्यापन और स्वीकृति के लिए BPL कार्ड, भूमि विवरण और बैंक पासबुक जमा करें", "as": "যাচাইকৰণ আৰু অনুমোদনৰ বাবে BPL কাৰ্ড, মাটিৰ বিৱৰণ আৰু বেংক পাছবুক জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://prd.assam.gov.in", "helpline": "1800-345-3611"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://prd.assam.gov.in"
+  },
+  {
+    "id": "assam-krishi-unnayan",
+    "name": {"en": "Assam Krishi Unnayan Yojana", "hi": "असम कृषि उन्नयन योजना", "as": "অসম কৃষি উন্নয়ন যোজনা"},
+    "level": "state",
+    "state": "AS",
+    "category": ["agriculture"],
+    "summary": {
+      "en": "Assam state scheme providing input subsidies, seeds, and equipment support to farmers.",
+      "hi": "असम राज्य योजना किसानों को इनपुट सब्सिडी, बीज और उपकरण सहायता प्रदान करती है।",
+      "as": "অসম ৰাজ্যৰ আঁচনিয়ে কৃষকসকলক ইনপুট ভৰ্তুকি, বীজ আৰু সঁজুলি সহায় প্ৰদান কৰে।"
+    },
+    "benefit": {"type": "in-kind+subsidy", "amount": "Seeds, fertilisers and equipment at subsidised rates; up to ₹10,000/year cash", "frequency": "Per season"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "occupation", "op": "in", "value": ["farmer"]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "land-record", "farmer-id", "bank-passbook"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Register at the Agriculture Department portal of Assam or visit nearest Krishi Vigyan Kendra", "hi": "असम के कृषि विभाग पोर्टल पर पंजीकरण करें या निकटतम कृषि विज्ञान केंद्र पर जाएं", "as": "অসমৰ কৃষি বিভাগ পৰ্টেলত নিবন্ধন কৰক বা ওচৰৰ কৃষি বিজ্ঞান কেন্দ্ৰলৈ যাওক"}},
+      {"step": 2, "text": {"en": "Submit land records and crop plan to block agriculture officer", "hi": "भूमि अभिलेख और फसल योजना खंड कृषि अधिकारी को जमा करें", "as": "মাটিৰ নথি আৰু শস্যৰ পৰিকল্পনা খণ্ড কৃষি বিষয়াক জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://agri.assam.gov.in", "helpline": "1800-345-6101"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://agri.assam.gov.in"
+  },
+  {
+    "id": "assam-women-udyamita",
+    "name": {"en": "Assam Women Udyamita (Entrepreneurship) Scheme", "hi": "असम महिला उद्यमिता योजना", "as": "অসম মহিলা উদ্যমিতা আঁচনি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["entrepreneurship", "women"],
+    "summary": {
+      "en": "Financial assistance and training for women entrepreneurs to start or scale micro-enterprises in Assam.",
+      "hi": "असम में महिला उद्यमियों को सूक्ष्म उद्यम शुरू करने या बढ़ाने के लिए वित्तीय सहायता और प्रशिक्षण।",
+      "as": "অসমত মহিলা উদ্যোক্তাক ক্ষুদ্ৰ উদ্যোগ আৰম্ভ বা বিস্তাৰ কৰিবলৈ আৰ্থিক সহায় আৰু প্ৰশিক্ষণ।"
+    },
+    "benefit": {"type": "subsidy+training", "amount": "Up to ₹2 lakh grant + free skill training", "frequency": "One-time grant"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "gender", "op": "eq", "value": "female"},
+        {"field": "occupation", "op": "in", "value": ["self-employed"]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "bank-passbook", "business-registration", "income-certificate", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at the District Industries Centre (DIC) or Assam Skill Development Mission office", "hi": "जिला उद्योग केंद्र (DIC) या असम कौशल विकास मिशन कार्यालय में आवेदन करें", "as": "জিলা উদ্যোগ কেন্দ্ৰ (DIC) বা অসম দক্ষতা উন্নয়ন অভিযান কাৰ্যালয়ত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit business plan and complete skill verification; grant disbursed in 2 tranches", "hi": "व्यवसाय योजना जमा करें और कौशल सत्यापन पूरा करें; अनुदान 2 किस्तों में वितरित किया जाता है", "as": "ব্যৱসায়ৰ পৰিকল্পনা জমা দিয়ক আৰু দক্ষতা যাচাইকৰণ সম্পূৰ্ণ কৰক; অনুদান 2 কিস্তিত বিতৰণ কৰা হ'ব"}}
+    ],
+    "links": {"official": "https://industries.assam.gov.in", "helpline": "1800-345-3550"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://industries.assam.gov.in"
+  },
+  {
+    "id": "assam-tea-garden-worker",
+    "name": {"en": "Assam Tea Garden Worker Welfare Scheme", "hi": "असम चाय बागान श्रमिक कल्याण योजना", "as": "অসম চাহ বাগিচা শ্ৰমিক কল্যাণ আঁচনি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["welfare", "labour"],
+    "summary": {
+      "en": "Welfare benefits including health, housing and education support for tea garden workers in Assam.",
+      "hi": "असम में चाय बागान श्रमिकों के लिए स्वास्थ्य, आवास और शिक्षा सहायता सहित कल्याण लाभ।",
+      "as": "অসমৰ চাহ বাগিচাৰ শ্ৰমিকসকলৰ বাবে স্বাস্থ্য, বাসগৃহ আৰু শিক্ষা সহায়সহ কল্যাণমূলক সুবিধা।"
+    },
+    "benefit": {"type": "multiple", "amount": "Health cover ₹5 lakh + housing subsidy + education grant for children", "frequency": "Annual / one-time"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "occupation", "op": "in", "value": ["farmer", "salaried"]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "voter-id", "bank-passbook", "income-certificate", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Register through Tea Garden management or Labour Department, Assam", "hi": "चाय बागान प्रबंधन या असम श्रम विभाग के माध्यम से पंजीकरण करें", "as": "চাহ বাগিচাৰ ব্যৱস্থাপনা বা অসম শ্ৰম বিভাগৰ জৰিয়তে নিবন্ধন কৰক"}},
+      {"step": 2, "text": {"en": "Submit employment proof from tea garden management and Aadhaar", "hi": "चाय बागान प्रबंधन और आधार से रोजगार प्रमाण जमा करें", "as": "চাহ বাগিচাৰ ব্যৱস্থাপনা আৰু আধাৰৰ পৰা নিযুক্তিৰ প্ৰমাণ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://labour.assam.gov.in", "helpline": "1800-345-3700"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://labour.assam.gov.in"
+  },
+  {
+    "id": "assam-minority-scholarship",
+    "name": {"en": "Assam Minority Scholarship Scheme", "hi": "असम अल्पसंख्यक छात्रवृत्ति योजना", "as": "অসম সংখ্যালঘু বৃত্তি আঁচনি"},
+    "level": "state",
+    "state": "AS",
+    "category": ["education", "scholarship", "minority"],
+    "summary": {
+      "en": "Pre-matric and post-matric scholarships for minority community students in Assam.",
+      "hi": "असम में अल्पसंख्यक समुदाय के छात्रों के लिए प्री-मैट्रिक और पोस्ट-मैट्रिक छात्रवृत्ति।",
+      "as": "অসমৰ সংখ্যালঘু সম্প্ৰদায়ৰ শিক্ষাৰ্থীৰ বাবে প্ৰি-মেট্ৰিক আৰু পোষ্ট-মেট্ৰিক বৃত্তি।"
+    },
+    "benefit": {"type": "cash", "amount": "₹1,000 – ₹7,000/year", "frequency": "Annual"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "occupation", "op": "in", "value": ["student"]},
+        {"field": "minority", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "school-certificate", "income-certificate", "bank-passbook", "marksheet-10th", "domicile-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at Assam Minorities Development Board or through institution", "hi": "असम अल्पसंख्यक विकास बोर्ड या संस्था के माध्यम से आवेदन करें", "as": "অসম সংখ্যালঘু উন্নয়ন ব'ৰ্ড বা প্ৰতিষ্ঠানৰ জৰিয়তে আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit minority community certificate and income proof below ₹1 lakh", "hi": "अल्पसंख्यक समुदाय प्रमाण पत्र और ₹1 लाख से कम आय प्रमाण जमा करें", "as": "সংখ্যালঘু সম্প্ৰদায়ৰ প্ৰমাণপত্ৰ আৰু ₹1 লাখতকৈ কম আয়ৰ প্ৰমাণ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://minoritywelfare.assam.gov.in", "helpline": "0361-2237850"},
+    "applyOnline": false,
+    "deadline": "2026-11-30",
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://minoritywelfare.assam.gov.in"
+  },
+  {
+    "id": "assam-anundoiram-barua",
+    "name": {"en": "Anundoiram Barua Merit Award", "hi": "अनंदोइराम बरुआ मेरिट पुरस्कार", "as": "আনন্দৰাম বৰুৱা মেধা বঁটা"},
+    "level": "state",
+    "state": "AS",
+    "category": ["education", "scholarship"],
+    "summary": {
+      "en": "Merit-based scholarship for Assam students who score 75%+ in HSLC (Class 10) board exams.",
+      "hi": "HSLC (कक्षा 10) बोर्ड परीक्षा में 75%+ अंक प्राप्त करने वाले असम छात्रों के लिए मेरिट-आधारित छात्रवृत्ति।",
+      "as": "HSLC (শ্ৰেণী 10) ব'ৰ্ড পৰীক্ষাত 75%+ নম্বৰ পোৱা অসম শিক্ষাৰ্থীৰ বাবে মেধা-ভিত্তিক বৃত্তি।"
+    },
+    "benefit": {"type": "cash", "amount": "₹900/month for 2 years", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "occupation", "op": "in", "value": ["student"]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "marksheet-10th", "school-certificate", "bank-passbook", "domicile-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply through the SEBA (Board of Secondary Education Assam) portal after HSLC results", "hi": "HSLC परिणाम के बाद SEBA (माध्यमिक शिक्षा बोर्ड असम) पोर्टल के माध्यम से आवेदन करें", "as": "HSLC ফলাফলৰ পাছত SEBA (মাধ্যমিক শিক্ষা ব'ৰ্ড অসম) পৰ্টেলৰ জৰিয়তে আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit marksheet showing 75%+ and Assam domicile certificate", "hi": "75%+ दिखाने वाली मार्कशीट और असम अधिवास प्रमाण पत्र जमा करें", "as": "75%+ দেখোৱা মাৰ্কশ্বীট আৰু অসম বাসিন্দা প্ৰমাণপত্ৰ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://sebaonline.org", "helpline": "0361-2605070"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://sebaonline.org"
+  },
+  {
+    "id": "assam-free-coaching",
+    "name": {"en": "Assam Free Coaching for Competitive Exams", "hi": "प्रतियोगी परीक्षाओं के लिए असम नि:शुल्क कोचिंग", "as": "প্ৰতিযোগিতামূলক পৰীক্ষাৰ বাবে অসম বিনামূলীয়া কোচিং"},
+    "level": "state",
+    "state": "AS",
+    "category": ["education", "employment"],
+    "summary": {
+      "en": "Free coaching for UPSC, APSC and other competitive exams for SC/ST/OBC students with income below ₹2 lakh.",
+      "hi": "₹2 लाख से कम आय वाले SC/ST/OBC छात्रों के लिए UPSC, APSC और अन्य प्रतियोगी परीक्षाओं के लिए निःशुल्क कोचिंग।",
+      "as": "₹2 লাখতকৈ কম আয়ৰ SC/ST/OBC শিক্ষাৰ্থীৰ বাবে UPSC, APSC আৰু অন্যান্য প্ৰতিযোগিতামূলক পৰীক্ষাৰ বাবে বিনামূলীয়া কোচিং।"
+    },
+    "benefit": {"type": "in-kind", "amount": "Free coaching + ₹2,500/month stipend during coaching period", "frequency": "During coaching duration"},
+    "eligibility": {
+      "all": [
+        {"field": "state", "op": "eq", "value": "AS"},
+        {"field": "occupation", "op": "in", "value": ["student"]},
+        {"field": "income", "op": "lt", "value": 200000}
+      ],
+      "any": [
+        {"field": "category", "op": "in", "value": ["sc", "st", "obc"]}
+      ],
+      "none": []
+    },
+    "documents": ["aadhaar", "caste-certificate", "income-certificate", "marksheet-12th", "degree-certificate", "domicile-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at the Assam Scheduled Caste / Tribal Welfare Department or respective department office", "hi": "असम अनुसूचित जाति/जनजाति कल्याण विभाग या संबंधित विभाग कार्यालय में आवेदन करें", "as": "অসম তফচিলভুক্ত জাতি/জনজাতি কল্যাণ বিভাগ বা সংশ্লিষ্ট বিভাগ কাৰ্যালয়ত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Selection is based on merit-cum-income; submit graduation marksheet and caste certificate", "hi": "चयन मेरिट-सह-आय के आधार पर होता है; स्नातक अंकपत्र और जाति प्रमाण पत्र जमा करें", "as": "নিৰ্বাচন মেধা-সহ-আয়ৰ ভিত্তিত হয়; স্নাতকৰ মাৰ্কশ্বীট আৰু জাতিৰ প্ৰমাণপত্ৰ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://socialwelfare.assam.gov.in", "helpline": "0361-2237395"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://socialwelfare.assam.gov.in"
+  }
+]

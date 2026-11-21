@@ -1,0 +1,168 @@
+[
+  {
+    "id": "q-state",
+    "field": "state",
+    "type": "select",
+    "question": {
+      "en": "Which state/UT do you live in?",
+      "hi": "आप किस राज्य/केंद्र शासित प्रदेश में रहते हैं?",
+      "as": "আপুনি কোন ৰাজ্য/কেন্দ্ৰশাসিত অঞ্চলত বাস কৰে?"
+    },
+    "options": [
+      {"value": "ALL", "label": {"en": "All India / Not Applicable", "hi": "सम्पूर्ण भारत / लागू नहीं", "as": "সমগ্ৰ ভাৰত / প্ৰযোজ্য নহয়"}},
+      {"value": "AN", "label": {"en": "Andaman & Nicobar Islands", "hi": "अंडमान और निकोबार द्वीप समूह", "as": "আন্দামান আৰু নিকোবাৰ দ্বীপপুঞ্জ"}},
+      {"value": "AP", "label": {"en": "Andhra Pradesh", "hi": "आंध्र प्रदेश", "as": "অন্ধ্ৰ প্ৰদেশ"}},
+      {"value": "AR", "label": {"en": "Arunachal Pradesh", "hi": "अरुणाचल प्रदेश", "as": "অৰুণাচল প্ৰদেশ"}},
+      {"value": "AS", "label": {"en": "Assam", "hi": "असम", "as": "অসম"}},
+      {"value": "BR", "label": {"en": "Bihar", "hi": "बिहार", "as": "বিহাৰ"}},
+      {"value": "CH", "label": {"en": "Chandigarh", "hi": "चंडीगढ़", "as": "চণ্ডীগড়"}},
+      {"value": "CG", "label": {"en": "Chhattisgarh", "hi": "छत्तीसगढ़", "as": "ছত্তীশগড়"}},
+      {"value": "DN", "label": {"en": "Dadra & Nagar Haveli and Daman & Diu", "hi": "दादरा और नगर हवेली तथा दमन और दीव", "as": "দাদৰা আৰু নগৰ হাভেলি আৰু দমন আৰু দিউ"}},
+      {"value": "DL", "label": {"en": "Delhi", "hi": "दिल्ली", "as": "দিল্লী"}},
+      {"value": "GA", "label": {"en": "Goa", "hi": "गोवा", "as": "গোৱা"}},
+      {"value": "GJ", "label": {"en": "Gujarat", "hi": "गुजरात", "as": "গুজৰাট"}},
+      {"value": "HR", "label": {"en": "Haryana", "hi": "हरियाणा", "as": "হাৰিয়ানা"}},
+      {"value": "HP", "label": {"en": "Himachal Pradesh", "hi": "हिमाचल प्रदेश", "as": "হিমাচল প্ৰদেশ"}},
+      {"value": "JK", "label": {"en": "Jammu & Kashmir", "hi": "जम्मू और कश्मीर", "as": "জম্মু আৰু কাশ্মীৰ"}},
+      {"value": "JH", "label": {"en": "Jharkhand", "hi": "झारखंड", "as": "ঝাৰখণ্ড"}},
+      {"value": "KA", "label": {"en": "Karnataka", "hi": "कर्नाटक", "as": "কৰ্ণাটক"}},
+      {"value": "KL", "label": {"en": "Kerala", "hi": "केरल", "as": "কেৰালা"}},
+      {"value": "LA", "label": {"en": "Ladakh", "hi": "लद्दाख", "as": "লাদাখ"}},
+      {"value": "LD", "label": {"en": "Lakshadweep", "hi": "लक्षद्वीप", "as": "লক্ষদ্বীপ"}},
+      {"value": "MP", "label": {"en": "Madhya Pradesh", "hi": "मध्य प्रदेश", "as": "মধ্য প্ৰদেশ"}},
+      {"value": "MH", "label": {"en": "Maharashtra", "hi": "महाराष्ट्र", "as": "মহাৰাষ্ট্ৰ"}},
+      {"value": "MN", "label": {"en": "Manipur", "hi": "मणिपुर", "as": "মণিপুৰ"}},
+      {"value": "ML", "label": {"en": "Meghalaya", "hi": "मेघालय", "as": "মেঘালয়"}},
+      {"value": "MZ", "label": {"en": "Mizoram", "hi": "मिजोरम", "as": "মিজোৰাম"}},
+      {"value": "NL", "label": {"en": "Nagaland", "hi": "नागालैंड", "as": "নাগালেণ্ড"}},
+      {"value": "OD", "label": {"en": "Odisha", "hi": "ओडिशा", "as": "ওডিশা"}},
+      {"value": "PY", "label": {"en": "Puducherry", "hi": "पुदुच्चेरी", "as": "পুডুচেৰী"}},
+      {"value": "PB", "label": {"en": "Punjab", "hi": "पंजाब", "as": "পাঞ্জাব"}},
+      {"value": "RJ", "label": {"en": "Rajasthan", "hi": "राजस्थान", "as": "ৰাজস্থান"}},
+      {"value": "SK", "label": {"en": "Sikkim", "hi": "सिक्किम", "as": "ছিক্কিম"}},
+      {"value": "TN", "label": {"en": "Tamil Nadu", "hi": "तमिलनाडु", "as": "তামিলনাডু"}},
+      {"value": "TG", "label": {"en": "Telangana", "hi": "तेलंगाना", "as": "তেলেংগানা"}},
+      {"value": "TR", "label": {"en": "Tripura", "hi": "त्रिपुरा", "as": "ত্ৰিপুৰা"}},
+      {"value": "UP", "label": {"en": "Uttar Pradesh", "hi": "उत्तर प्रदेश", "as": "উত্তৰ প্ৰদেশ"}},
+      {"value": "UK", "label": {"en": "Uttarakhand", "hi": "उत्तराखंड", "as": "উত্তৰাখণ্ড"}},
+      {"value": "WB", "label": {"en": "West Bengal", "hi": "पश्चिम बंगाल", "as": "পশ্চিমবংগ"}}
+    ]
+  },
+  {
+    "id": "q-area",
+    "field": "area",
+    "type": "radio",
+    "question": {
+      "en": "Do you live in a Rural or Urban area?",
+      "hi": "क्या आप ग्रामीण या शहरी क्षेत्र में रहते हैं?",
+      "as": "আপুনি গ্ৰামীণ নে নগৰীয়া অঞ্চলত বাস কৰে?"
+    },
+    "options": [
+      {"value": "rural", "label": {"en": "Rural (Village / Panchayat area)", "hi": "ग्रामीण (गांव / पंचायत क्षेत्र)", "as": "গ্ৰামীণ (গাঁও / পঞ্চায়ত অঞ্চল)"}},
+      {"value": "urban", "label": {"en": "Urban (Town / City / Municipality)", "hi": "शहरी (नगर / शहर / नगरपालिका)", "as": "নগৰীয়া (নগৰ / চহৰ / নগৰপালিকা)"}}
+    ]
+  },
+  {
+    "id": "q-age",
+    "field": "age",
+    "type": "number",
+    "min": 1,
+    "max": 120,
+    "question": {
+      "en": "What is your age? (in years)",
+      "hi": "आपकी आयु कितनी है? (वर्षों में)",
+      "as": "আপোনাৰ বয়স কিমান? (বছৰত)"
+    },
+    "options": []
+  },
+  {
+    "id": "q-gender",
+    "field": "gender",
+    "type": "radio",
+    "question": {
+      "en": "What is your gender?",
+      "hi": "आपका लिंग क्या है?",
+      "as": "আপোনাৰ লিংগ কি?"
+    },
+    "options": [
+      {"value": "male", "label": {"en": "Male", "hi": "पुरुष", "as": "পুৰুষ"}},
+      {"value": "female", "label": {"en": "Female", "hi": "महिला", "as": "মহিলা"}},
+      {"value": "other", "label": {"en": "Other / Prefer not to say", "hi": "अन्य / बताना नहीं चाहते", "as": "অন্যান্য / কোৱাটো পছন্দ নহয়"}}
+    ]
+  },
+  {
+    "id": "q-income",
+    "field": "income",
+    "type": "select",
+    "question": {
+      "en": "What is your annual family income?",
+      "hi": "आपकी वार्षिक पारिवारिक आय कितनी है?",
+      "as": "আপোনাৰ বাৰ্ষিক পাৰিবাৰিক আয় কিমান?"
+    },
+    "options": [
+      {"value": 0, "label": {"en": "Below ₹1 lakh", "hi": "₹1 लाख से कम", "as": "₹1 লাখতকৈ কম"}},
+      {"value": 100000, "label": {"en": "₹1 lakh – ₹2.5 lakh", "hi": "₹1 लाख – ₹2.5 लाख", "as": "₹1 লাখ – ₹2.5 লাখ"}},
+      {"value": 250000, "label": {"en": "₹2.5 lakh – ₹5 lakh", "hi": "₹2.5 लाख – ₹5 लाख", "as": "₹2.5 লাখ – ₹5 লাখ"}},
+      {"value": 500000, "label": {"en": "₹5 lakh – ₹8 lakh", "hi": "₹5 लाख – ₹8 लाख", "as": "₹5 লাখ – ₹8 লাখ"}},
+      {"value": 800000, "label": {"en": "Above ₹8 lakh", "hi": "₹8 लाख से अधिक", "as": "₹8 লাখতকৈ বেছি"}}
+    ]
+  },
+  {
+    "id": "q-category",
+    "field": "category",
+    "type": "radio",
+    "question": {
+      "en": "What is your social category?",
+      "hi": "आपकी सामाजिक श्रेणी क्या है?",
+      "as": "আপোনাৰ সামাজিক শ্ৰেণী কি?"
+    },
+    "options": [
+      {"value": "general", "label": {"en": "General (Unreserved)", "hi": "सामान्य (अनारक्षित)", "as": "সাধাৰণ (অসংৰক্ষিত)"}},
+      {"value": "obc", "label": {"en": "OBC (Other Backward Classes)", "hi": "OBC (अन्य पिछड़ा वर्ग)", "as": "OBC (অন্যান্য পিছপৰা শ্ৰেণী)"}},
+      {"value": "sc", "label": {"en": "SC (Scheduled Caste)", "hi": "SC (अनुसूचित जाति)", "as": "SC (তফচিলভুক্ত জাতি)"}},
+      {"value": "st", "label": {"en": "ST (Scheduled Tribe)", "hi": "ST (अनुसूचित जनजाति)", "as": "ST (তফচিলভুক্ত জনজাতি)"}},
+      {"value": "ews", "label": {"en": "EWS (Economically Weaker Section)", "hi": "EWS (आर्थिक रूप से कमजोर वर्ग)", "as": "EWS (অৰ্থনৈতিকভাৱে দুৰ্বল শ্ৰেণী)"}}
+    ]
+  },
+  {
+    "id": "q-occupation",
+    "field": "occupation",
+    "type": "radio",
+    "question": {
+      "en": "What is your primary occupation?",
+      "hi": "आपका मुख्य व्यवसाय क्या है?",
+      "as": "আপোনাৰ প্ৰধান পেশা কি?"
+    },
+    "options": [
+      {"value": "farmer", "label": {"en": "Farmer / Agricultural worker", "hi": "किसान / कृषि श्रमिक", "as": "কৃষক / কৃষি শ্ৰমিক"}},
+      {"value": "student", "label": {"en": "Student", "hi": "छात्र", "as": "শিক্ষাৰ্থী"}},
+      {"value": "self-employed", "label": {"en": "Self-employed / Business owner", "hi": "स्व-रोजगार / व्यवसाय स्वामी", "as": "স্ব-নিযুক্ত / ব্যৱসায়ৰ মালিক"}},
+      {"value": "salaried", "label": {"en": "Salaried / Government / Private employee", "hi": "वेतनभोगी / सरकारी / निजी कर्मचारी", "as": "বেতনভোগী / চৰকাৰী / বেচৰকাৰী কৰ্মচাৰী"}},
+      {"value": "unemployed", "label": {"en": "Unemployed / Job seeker", "hi": "बेरोजगार / नौकरी खोजने वाला", "as": "বেকাৰ / চাকৰি বিচৰা"}},
+      {"value": "domestic", "label": {"en": "Homemaker / Domestic worker", "hi": "गृहिणी / घरेलू कामगार", "as": "গৃহিণী / ঘৰুৱা শ্ৰমিক"}},
+      {"value": "artisan", "label": {"en": "Artisan / Craftsperson / Weaver", "hi": "कारीगर / शिल्पकार / बुनकर", "as": "কাৰিকৰ / শিল্পী / তাঁতী"}},
+      {"value": "retired", "label": {"en": "Retired", "hi": "सेवानिवृत्त", "as": "অৱসৰপ্ৰাপ্ত"}}
+    ]
+  },
+  {
+    "id": "q-special",
+    "field": "special",
+    "type": "multiselect",
+    "question": {
+      "en": "Do any of these apply to you? (Select all that apply)",
+      "hi": "क्या इनमें से कोई आप पर लागू होता है? (सभी लागू विकल्प चुनें)",
+      "as": "এইবোৰৰ কোনোটো আপোনাৰ ক্ষেত্ৰত প্ৰযোজ্য নেকি? (সকলো প্ৰযোজ্য বিকল্প বাছক)"
+    },
+    "options": [
+      {"value": "bpl", "label": {"en": "BPL (Below Poverty Line) card holder", "hi": "BPL (गरीबी रेखा से नीचे) कार्डधारक", "as": "BPL (দাৰিদ্ৰ্য সীমাৰ তলত) কাৰ্ডধাৰী"}},
+      {"value": "disability", "label": {"en": "Person with Disability (40%+)", "hi": "दिव्यांग व्यक्ति (40%+)", "as": "প্ৰতিবন্ধী ব্যক্তি (40%+)"}},
+      {"value": "widow", "label": {"en": "Widow / Widower", "hi": "विधवा / विधुर", "as": "বিধৱা / বিধুৰ"}},
+      {"value": "minority", "label": {"en": "Minority community (Muslim/Christian/Sikh/Buddhist/Jain/Parsi)", "hi": "अल्पसंख्यक समुदाय (मुस्लिम/ईसाई/सिख/बौद्ध/जैन/पारसी)", "as": "সংখ্যালঘু সম্প্ৰদায় (মুছলিম/খ্ৰিষ্টান/শিখ/বৌদ্ধ/জৈন/পাৰ্ছী)"}},
+      {"value": "girlChild", "label": {"en": "Girl child in family (below 10 years)", "hi": "परिवार में बालिका (10 वर्ष से कम)", "as": "পৰিয়ালত ছোৱালী শিশু (10 বছৰৰ তলত)"}},
+      {"value": "landOwner", "label": {"en": "Land owner (have land records / patta)", "hi": "भूमि स्वामी (भूमि अभिलेख / पट्टा है)", "as": "মাটিৰ মালিক (মাটিৰ নথি / পট্টা আছে)"}},
+      {"value": "incomeTaxPayer", "label": {"en": "Income Tax payer (filed ITR last year)", "hi": "आयकर दाता (पिछले वर्ष ITR दाखिल किया)", "as": "আয়কৰ দাতা (যোৱা বছৰ ITR দাখিল কৰিছিল)"}},
+      {"value": "streetVendor", "label": {"en": "Street vendor / Hawker (with or without vending certificate)", "hi": "स्ट्रीट वेंडर / फेरीवाला (वेंडिंग प्रमाण पत्र के साथ या बिना)", "as": "ফেৰিৱালা / হকাৰ (বিক্ৰয় প্ৰমাণপত্ৰসহ বা অবিহনে)"}},
+      {"value": "none", "label": {"en": "None of the above", "hi": "उपरोक्त में से कोई नहीं", "as": "ওপৰৰ কোনোটোৱেই নহয়"}}
+    ]
+  }
+]

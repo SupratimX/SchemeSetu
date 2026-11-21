@@ -1,0 +1,839 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": {"en": "PM-KISAN", "hi": "पीएम-किसान", "as": "পিএম-কিষাণ"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["agriculture", "income-support"],
+    "summary": {
+      "en": "₹6,000 per year income support for farmer families.",
+      "hi": "किसान परिवारों को ₹6,000 प्रति वर्ष की आय सहायता।",
+      "as": "কৃষক পৰিয়ালৰ বাবে বছৰি ₹6,000 আয় সহায়।"
+    },
+    "benefit": {"type": "cash", "amount": "₹6,000/year", "frequency": "3 instalments of ₹2,000"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["farmer"]},
+        {"field": "landOwner", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": [
+        {"field": "incomeTaxPayer", "op": "eq", "value": true}
+      ]
+    },
+    "documents": ["aadhaar", "land-record", "bank-passbook"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Visit pmkisan.gov.in or nearest Common Service Centre (CSC)", "hi": "pmkisan.gov.in या नजदीकी CSC पर जाएं", "as": "pmkisan.gov.in বা ওচৰৰ CSC-ত যাওক"}},
+      {"step": 2, "text": {"en": "Fill registration form with Aadhaar and land details", "hi": "आधार और भूमि विवरण के साथ पंजीकरण फॉर्म भरें", "as": "আধাৰ আৰু মাটিৰ বিৱৰণেৰে নিবন্ধন ফৰ্ম পূৰণ কৰক"}}
+    ],
+    "links": {"official": "https://pmkisan.gov.in", "helpline": "155261"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmkisan.gov.in"
+  },
+  {
+    "id": "pmay-gramin",
+    "name": {"en": "PM Awas Yojana – Gramin", "hi": "प्रधानमंत्री आवास योजना – ग्रामीण", "as": "প্ৰধানমন্ত্ৰী আৱাস যোজনা – গ্ৰামীণ"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["housing"],
+    "summary": {
+      "en": "Financial assistance to rural BPL/SC/ST households to construct pucca houses.",
+      "hi": "ग्रामीण BPL/SC/ST परिवारों को पक्के घर बनाने हेतु वित्तीय सहायता।",
+      "as": "গ্ৰামীণ BPL/SC/ST পৰিয়ালসমূহক পকী ঘৰ নিৰ্মাণৰ বাবে আৰ্থিক সহায়।"
+    },
+    "benefit": {"type": "cash", "amount": "₹1.2–1.3 lakh (plain) / ₹1.3 lakh (hilly)", "frequency": "In 3 instalments"},
+    "eligibility": {
+      "all": [
+        {"field": "area", "op": "eq", "value": "rural"},
+        {"field": "income", "op": "lt", "value": 300000}
+      ],
+      "any": [
+        {"field": "category", "op": "in", "value": ["sc", "st"]},
+        {"field": "bpl", "op": "eq", "value": true}
+      ],
+      "none": []
+    },
+    "documents": ["aadhaar", "bpl-card", "caste-certificate", "bank-passbook", "income-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Contact your Gram Panchayat or Block Development Officer", "hi": "अपनी ग्राम पंचायत या खंड विकास अधिकारी से संपर्क करें", "as": "আপোনাৰ গ্ৰাম পঞ্চায়ত বা খণ্ড উন্নয়ন বিষয়াৰ সৈতে যোগাযোগ কৰক"}},
+      {"step": 2, "text": {"en": "Register on AwaasSoft portal (awaassoft.nic.in)", "hi": "AwaasSoft पोर्टल (awaassoft.nic.in) पर पंजीकरण करें", "as": "AwaasSoft পৰ্টেলত (awaassoft.nic.in) নিবন্ধন কৰক"}}
+    ],
+    "links": {"official": "https://pmayg.nic.in", "helpline": "1800-11-6446"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmayg.nic.in"
+  },
+  {
+    "id": "pmay-urban",
+    "name": {"en": "PM Awas Yojana – Urban", "hi": "प्रधानमंत्री आवास योजना – शहरी", "as": "প্ৰধানমন্ত্ৰী আৱাস যোজনা – নগৰীয়া"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["housing"],
+    "summary": {
+      "en": "Credit-linked subsidy and direct benefit for urban families without a pucca house.",
+      "hi": "बिना पक्के घर के शहरी परिवारों को क्रेडिट-लिंक्ड सब्सिडी और प्रत्यक्ष लाभ।",
+      "as": "পকী ঘৰ নথকা নগৰীয়া পৰিয়ালৰ বাবে ক্ৰেডিট-লিংকড ছাবছিডি আৰু প্ৰত্যক্ষ সুবিধা।"
+    },
+    "benefit": {"type": "subsidy", "amount": "Up to ₹2.67 lakh interest subsidy", "frequency": "One-time"},
+    "eligibility": {
+      "all": [
+        {"field": "area", "op": "eq", "value": "urban"},
+        {"field": "income", "op": "lt", "value": 600000},
+        {"field": "puccaHouse", "op": "eq", "value": false}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "income-certificate", "bank-passbook", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Visit pmaymis.gov.in or nearest Urban Local Body (ULB)", "hi": "pmaymis.gov.in या निकटतम नगर निकाय पर जाएं", "as": "pmaymis.gov.in বা ওচৰৰ নগৰ স্থানীয় সংস্থাত যাওক"}},
+      {"step": 2, "text": {"en": "Select the appropriate component (BLC/CLSS/AHP) and apply", "hi": "उचित घटक (BLC/CLSS/AHP) चुनें और आवेदन करें", "as": "উপযুক্ত উপাদান (BLC/CLSS/AHP) বাছি আবেদন কৰক"}}
+    ],
+    "links": {"official": "https://pmaymis.gov.in", "helpline": "1800-11-3377"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmaymis.gov.in"
+  },
+  {
+    "id": "pmjdy",
+    "name": {"en": "PM Jan Dhan Yojana", "hi": "प्रधानमंत्री जन धन योजना", "as": "প্ৰধানমন্ত্ৰী জন ধন যোজনা"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["financial-inclusion"],
+    "summary": {
+      "en": "Zero-balance bank account with RuPay debit card and ₹2 lakh accident insurance for every citizen.",
+      "hi": "हर नागरिक के लिए जीरो बैलेंस बैंक खाता, RuPay डेबिट कार्ड और ₹2 लाख दुर्घटना बीमा।",
+      "as": "প্ৰতিজন নাগৰিকৰ বাবে শূন্য জমা বেংক একাউণ্ট, RuPay ডেবিট কাৰ্ড আৰু ₹2 লাখ দুৰ্ঘটনা বীমা।"
+    },
+    "benefit": {"type": "service", "amount": "Zero-balance account + ₹2 lakh accident insurance + ₹30,000 life cover", "frequency": "Ongoing"},
+    "eligibility": {
+      "all": [],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "voter-id", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Visit any bank branch or Business Correspondent with Aadhaar/Voter ID", "hi": "आधार/मतदाता पहचान पत्र के साथ किसी भी बैंक शाखा या BC पर जाएं", "as": "আধাৰ/ভোটাৰ পৰিচয়পত্ৰ লৈ যেকোনো বেংক শাখা বা BC-ৰ ওচৰলৈ যাওক"}},
+      {"step": 2, "text": {"en": "Fill the account opening form and get RuPay debit card", "hi": "खाता खोलने का फॉर्म भरें और RuPay डेबिट कार्ड प्राप्त करें", "as": "একাউণ্ট খোলাৰ ফৰ্ম পূৰণ কৰক আৰু RuPay ডেবিট কাৰ্ড লওক"}}
+    ],
+    "links": {"official": "https://pmjdy.gov.in", "helpline": "1800-11-0001"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmjdy.gov.in"
+  },
+  {
+    "id": "ayushman-bharat",
+    "name": {"en": "Ayushman Bharat – PM-JAY", "hi": "आयुष्मान भारत – प्रधानमंत्री जन आरोग्य योजना", "as": "আয়ুষ্মান ভাৰত – PM-JAY"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["health"],
+    "summary": {
+      "en": "₹5 lakh per year health insurance for BPL and low-income families.",
+      "hi": "BPL और कम आय वाले परिवारों के लिए ₹5 लाख प्रति वर्ष स्वास्थ्य बीमा।",
+      "as": "BPL আৰু কম আয়ৰ পৰিয়ালৰ বাবে বছৰি ₹5 লাখ স্বাস্থ্য বীমা।"
+    },
+    "benefit": {"type": "insurance", "amount": "₹5 lakh/year health cover", "frequency": "Annual"},
+    "eligibility": {
+      "all": [
+        {"field": "income", "op": "lt", "value": 500000}
+      ],
+      "any": [
+        {"field": "bpl", "op": "eq", "value": true},
+        {"field": "category", "op": "in", "value": ["sc", "st"]}
+      ],
+      "none": []
+    },
+    "documents": ["aadhaar", "ration-card", "bpl-card", "income-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Check eligibility at beneficiary.nha.gov.in or call 14555", "hi": "beneficiary.nha.gov.in पर पात्रता जांचें या 14555 पर कॉल करें", "as": "beneficiary.nha.gov.in-ত যোগ্যতা পৰীক্ষা কৰক বা 14555 নম্বৰত ফোন কৰক"}},
+      {"step": 2, "text": {"en": "Get Ayushman Card at empanelled hospital or CSC", "hi": "पैनलबद्ध अस्पताल या CSC पर आयुष्मान कार्ड प्राप्त करें", "as": "তালিকাভুক্ত চিকিৎসালয় বা CSC-ত আয়ুষ্মান কাৰ্ড লওক"}}
+    ],
+    "links": {"official": "https://pmjay.gov.in", "helpline": "14555"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmjay.gov.in"
+  },
+  {
+    "id": "pm-ujjwala",
+    "name": {"en": "PM Ujjwala Yojana", "hi": "प्रधानमंत्री उज्ज्वला योजना", "as": "প্ৰধানমন্ত্ৰী উজ্জ্বলা যোজনা"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["welfare", "women"],
+    "summary": {
+      "en": "Free LPG connection to BPL women households who do not have an existing LPG connection.",
+      "hi": "BPL महिला परिवारों को जिनके पास LPG कनेक्शन नहीं है, उन्हें मुफ्त LPG कनेक्शन।",
+      "as": "LPG সংযোগ নথকা BPL মহিলা পৰিয়ালসমূহক বিনামূলীয়া LPG সংযোগ।"
+    },
+    "benefit": {"type": "in-kind", "amount": "Free LPG connection + first refill subsidy", "frequency": "One-time connection"},
+    "eligibility": {
+      "all": [
+        {"field": "gender", "op": "eq", "value": "female"},
+        {"field": "bpl", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": [
+        {"field": "hasLPGConnection", "op": "eq", "value": true}
+      ]
+    },
+    "documents": ["aadhaar", "bpl-card", "ration-card", "bank-passbook", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Visit nearest LPG distributor (HP/Indane/Bharatgas) with BPL card", "hi": "BPL कार्ड के साथ निकटतम LPG वितरक (HP/Indane/Bharatgas) पर जाएं", "as": "BPL কাৰ্ড লৈ ওচৰৰ LPG বিতৰকৰ (HP/Indane/Bharatgas) ওচৰলৈ যাওক"}},
+      {"step": 2, "text": {"en": "Fill PMUY form and submit documents; connection is issued free of cost", "hi": "PMUY फॉर्म भरें और दस्तावेज जमा करें; कनेक्शन निःशुल्क दिया जाएगा", "as": "PMUY ফৰ্ম পূৰণ কৰক আৰু নথি জমা দিয়ক; সংযোগ বিনামূলীয়াকৈ দিয়া হ'ব"}}
+    ],
+    "links": {"official": "https://pmuy.gov.in", "helpline": "1906"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmuy.gov.in"
+  },
+  {
+    "id": "pm-mudra-shishu",
+    "name": {"en": "PM Mudra Yojana – Shishu", "hi": "प्रधानमंत्री मुद्रा योजना – शिशु", "as": "প্ৰধানমন্ত্ৰী মুদ্ৰা যোজনা – শিশু"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["entrepreneurship", "loan"],
+    "summary": {
+      "en": "Collateral-free loan up to ₹50,000 for small self-employed individuals and micro businesses.",
+      "hi": "छोटे स्व-रोजगार व्यक्तियों और सूक्ष्म व्यवसायों के लिए ₹50,000 तक बिना गारंटी ऋण।",
+      "as": "সৰু স্ব-নিযুক্ত ব্যক্তি আৰু ক্ষুদ্ৰ ব্যৱসায়ৰ বাবে ₹50,000 লৈকে জামানত-মুক্ত ঋণ।"
+    },
+    "benefit": {"type": "loan", "amount": "Up to ₹50,000", "frequency": "One-time loan"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["self-employed"]},
+        {"field": "income", "op": "lt", "value": 300000}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "pan-card", "bank-passbook", "business-registration", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at any bank, MFI, or NBFC or visit mudra.org.in", "hi": "किसी बैंक, MFI या NBFC पर आवेदन करें या mudra.org.in पर जाएं", "as": "যিকোনো বেংক, MFI বা NBFC-ত আবেদন কৰক বা mudra.org.in-ত যাওক"}},
+      {"step": 2, "text": {"en": "Submit business plan and KYC documents; loan is processed within 7 days", "hi": "व्यवसाय योजना और KYC दस्तावेज जमा करें; ऋण 7 दिनों में स्वीकृत होता है", "as": "ব্যৱসায়ৰ পৰিকল্পনা আৰু KYC নথি জমা দিয়ক; 7 দিনৰ ভিতৰত ঋণ প্ৰক্ৰিয়া হ'ব"}}
+    ],
+    "links": {"official": "https://mudra.org.in", "helpline": "1800-180-1111"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://mudra.org.in"
+  },
+  {
+    "id": "pm-mudra-kishore",
+    "name": {"en": "PM Mudra Yojana – Kishore", "hi": "प्रधानमंत्री मुद्रा योजना – किशोर", "as": "প্ৰধানমন্ত্ৰী মুদ্ৰা যোজনা – কিশোৰ"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["entrepreneurship", "loan"],
+    "summary": {
+      "en": "Loan between ₹50,000 and ₹5 lakh for self-employed individuals with an existing business.",
+      "hi": "मौजूदा व्यवसाय वाले स्व-रोजगार व्यक्तियों के लिए ₹50,000 से ₹5 लाख तक ऋण।",
+      "as": "বিদ্যমান ব্যৱসায় থকা স্ব-নিযুক্ত ব্যক্তিৰ বাবে ₹50,000 ৰ পৰা ₹5 লাখলৈকে ঋণ।"
+    },
+    "benefit": {"type": "loan", "amount": "₹50,001 – ₹5,00,000", "frequency": "One-time loan"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["self-employed"]},
+        {"field": "existingBusiness", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "pan-card", "bank-passbook", "business-registration", "income-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at any scheduled commercial bank, RRB, MFI or NBFC", "hi": "किसी अनुसूचित वाणिज्यिक बैंक, RRB, MFI या NBFC पर आवेदन करें", "as": "যিকোনো অনুসূচিত বাণিজ্যিক বেংক, RRB, MFI বা NBFC-ত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit 6-month bank statement, business proof and KYC documents", "hi": "6 माह का बैंक स्टेटमेंट, व्यवसाय प्रमाण और KYC दस्तावेज जमा करें", "as": "6 মাহৰ বেংক বিবৃতি, ব্যৱসায়ৰ প্ৰমাণ আৰু KYC নথি জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://mudra.org.in", "helpline": "1800-180-1111"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://mudra.org.in"
+  },
+  {
+    "id": "nsp-central",
+    "name": {"en": "National Scholarship Portal – Central Schemes", "hi": "राष्ट्रीय छात्रवृत्ति पोर्टल – केंद्रीय योजनाएं", "as": "ৰাষ্ট্ৰীয় বৃত্তি পৰ্টেল – কেন্দ্ৰীয় আঁচনি"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["education", "scholarship"],
+    "summary": {
+      "en": "Central government scholarships for students from economically weaker backgrounds through NSP.",
+      "hi": "NSP के माध्यम से आर्थिक रूप से कमजोर पृष्ठभूमि के छात्रों के लिए केंद्रीय छात्रवृत्ति।",
+      "as": "NSP-ৰ জৰিয়তে অৰ্থনৈতিকভাৱে দুৰ্বল পটভূমিৰ শিক্ষাৰ্থীৰ বাবে কেন্দ্ৰীয় চৰকাৰৰ বৃত্তি।"
+    },
+    "benefit": {"type": "cash", "amount": "₹1,000 – ₹20,000/year depending on level", "frequency": "Annual"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["student"]},
+        {"field": "income", "op": "lt", "value": 250000}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "income-certificate", "marksheet-10th", "marksheet-12th", "bank-passbook", "school-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Register at scholarships.gov.in with Aadhaar-linked mobile", "hi": "आधार-लिंक्ड मोबाइल के साथ scholarships.gov.in पर पंजीकरण करें", "as": "আধাৰ-সংযুক্ত মোবাইলেৰে scholarships.gov.in-ত নিবন্ধন কৰক"}},
+      {"step": 2, "text": {"en": "Select the appropriate scholarship scheme and submit application before deadline", "hi": "उचित छात्रवृत्ति योजना चुनें और समय सीमा से पहले आवेदन जमा करें", "as": "উপযুক্ত বৃত্তি আঁচনি বাছক আৰু শেষ তাৰিখৰ আগতে আবেদন জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://scholarships.gov.in", "helpline": "0120-6619540"},
+    "applyOnline": true,
+    "deadline": "2026-11-30",
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://scholarships.gov.in"
+  },
+  {
+    "id": "pm-scholarship-capf",
+    "name": {"en": "PM Scholarship Scheme for CAPF & AR", "hi": "CAPF और AR के लिए PM छात्रवृत्ति योजना", "as": "CAPF আৰু AR ৰ বাবে PM বৃত্তি আঁচনি"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["education", "scholarship", "defence"],
+    "summary": {
+      "en": "Scholarship for wards of Central Armed Police Forces (CAPF) and Assam Rifles personnel.",
+      "hi": "CAPF और असम राइफल्स कार्मिकों के वार्डों के लिए छात्रवृत्ति।",
+      "as": "কেন্দ্ৰীয় সশস্ত্ৰ আৰক্ষী বাহিনী (CAPF) আৰু অসম ৰাইফলছৰ কৰ্মীৰ সন্তানৰ বাবে বৃত্তি।"
+    },
+    "benefit": {"type": "cash", "amount": "₹2,000–₹2,500/month", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["student"]},
+        {"field": "parentInArmedForces", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "school-certificate", "marksheet-12th", "bank-passbook", "degree-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply online at scholarships.gov.in under CAPF/AR category", "hi": "scholarships.gov.in पर CAPF/AR श्रेणी में ऑनलाइन आवेदन करें", "as": "scholarships.gov.in-ত CAPF/AR শ্ৰেণীত অনলাইনত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Get verification from unit/zila sainik board and submit", "hi": "यूनिट/जिला सैनिक बोर्ड से सत्यापन प्राप्त करें और जमा करें", "as": "ইউনিট/জিলা সৈনিক ব'ৰ্ডৰ পৰা যাচাই লওক আৰু জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://scholarships.gov.in", "helpline": "011-24369851"},
+    "applyOnline": true,
+    "deadline": "2026-10-31",
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://scholarships.gov.in"
+  },
+  {
+    "id": "standup-india",
+    "name": {"en": "Stand-Up India", "hi": "स्टैंड-अप इंडिया", "as": "ষ্টেণ্ড-আপ ইণ্ডিয়া"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["entrepreneurship", "loan", "women", "sc-st"],
+    "summary": {
+      "en": "Bank loan between ₹10 lakh and ₹1 crore for SC/ST and women entrepreneurs to set up greenfield enterprises.",
+      "hi": "SC/ST और महिला उद्यमियों को ग्रीनफील्ड उद्यम स्थापित करने के लिए ₹10 लाख से ₹1 करोड़ बैंक ऋण।",
+      "as": "SC/ST আৰু মহিলা উদ্যোক্তাক গ্ৰীনফিল্ড উদ্যোগ স্থাপনৰ বাবে ₹10 লাখৰ পৰা ₹1 কোটিলৈকে বেংক ঋণ।"
+    },
+    "benefit": {"type": "loan", "amount": "₹10 lakh – ₹1 crore", "frequency": "One-time loan"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["self-employed"]}
+      ],
+      "any": [
+        {"field": "category", "op": "in", "value": ["sc", "st"]},
+        {"field": "gender", "op": "eq", "value": "female"}
+      ],
+      "none": []
+    },
+    "documents": ["aadhaar", "pan-card", "caste-certificate", "business-registration", "bank-passbook", "income-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Register at standupmitra.in and check eligibility", "hi": "standupmitra.in पर पंजीकरण करें और पात्रता जांचें", "as": "standupmitra.in-ত নিবন্ধন কৰক আৰু যোগ্যতা পৰীক্ষা কৰক"}},
+      {"step": 2, "text": {"en": "Connect with nearest bank branch under Stand-Up India scheme", "hi": "स्टैंड-अप इंडिया योजना के तहत निकटतम बैंक शाखा से संपर्क करें", "as": "ষ্টেণ্ড-আপ ইণ্ডিয়া আঁচনিৰ অধীনত ওচৰৰ বেংক শাখাৰ সৈতে যোগাযোগ কৰক"}}
+    ],
+    "links": {"official": "https://standupmitra.in", "helpline": "1800-180-1111"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://standupmitra.in"
+  },
+  {
+    "id": "pmegp",
+    "name": {"en": "PM Employment Generation Programme (PMEGP)", "hi": "प्रधानमंत्री रोजगार सृजन कार्यक्रम", "as": "প্ৰধানমন্ত্ৰী কৰ্মসংস্থান সৃষ্টি কাৰ্যক্ৰম"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["entrepreneurship", "employment"],
+    "summary": {
+      "en": "Subsidy-linked loan to set up new micro-enterprises in manufacturing or service sector.",
+      "hi": "विनिर्माण या सेवा क्षेत्र में नए सूक्ष्म उद्यम स्थापित करने के लिए सब्सिडी-लिंक्ड ऋण।",
+      "as": "উৎপাদন বা সেৱা খণ্ডত নতুন ক্ষুদ্ৰ উদ্যোগ স্থাপনৰ বাবে ছাবছিডি-সংযুক্ত ঋণ।"
+    },
+    "benefit": {"type": "subsidy+loan", "amount": "15–35% subsidy on project cost up to ₹50 lakh", "frequency": "One-time"},
+    "eligibility": {
+      "all": [
+        {"field": "age", "op": "gte", "value": 18},
+        {"field": "income", "op": "lt", "value": 100000}
+      ],
+      "any": [
+        {"field": "occupation", "op": "in", "value": ["unemployed", "self-employed"]}
+      ],
+      "none": []
+    },
+    "documents": ["aadhaar", "pan-card", "income-certificate", "bank-passbook", "photo", "caste-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply online at kviconline.gov.in/pmegpeportal", "hi": "kviconline.gov.in/pmegpeportal पर ऑनलाइन आवेदन करें", "as": "kviconline.gov.in/pmegpeportal-ত অনলাইনত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit project report to KVIC/KVIB/DIC for appraisal", "hi": "मूल्यांकन के लिए KVIC/KVIB/DIC को परियोजना रिपोर्ट जमा करें", "as": "মূল্যায়নৰ বাবে KVIC/KVIB/DIC-ত প্ৰকল্প প্ৰতিবেদন জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://kviconline.gov.in/pmegpeportal", "helpline": "1800-3000-0034"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://kviconline.gov.in/pmegpeportal"
+  },
+  {
+    "id": "sukanya-samriddhi",
+    "name": {"en": "Sukanya Samriddhi Yojana", "hi": "सुकन्या समृद्धि योजना", "as": "সুকন্যা সমৃদ্ধি যোজনা"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["savings", "women", "girl-child"],
+    "summary": {
+      "en": "High-interest savings scheme for girl children below 10 years to secure their future.",
+      "hi": "10 वर्ष से कम आयु की बालिकाओं के भविष्य को सुरक्षित करने के लिए उच्च ब्याज बचत योजना।",
+      "as": "10 বছৰৰ তলৰ ছোৱালী শিশুৰ ভৱিষ্যৎ সুৰক্ষিত কৰিবলৈ উচ্চ সুদৰ সঞ্চয় আঁচনি।"
+    },
+    "benefit": {"type": "savings", "amount": "8.2% interest p.a. on deposits up to ₹1.5 lakh/year", "frequency": "Annual deposit"},
+    "eligibility": {
+      "all": [
+        {"field": "girlChild", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "birth-certificate", "bank-passbook", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Open account at any post office or authorised bank branch", "hi": "किसी डाकघर या अधिकृत बैंक शाखा में खाता खोलें", "as": "যিকোনো ডাকঘৰ বা অনুমোদিত বেংক শাখাত একাউণ্ট খোলক"}},
+      {"step": 2, "text": {"en": "Submit girl child's birth certificate and guardian Aadhaar; deposit minimum ₹250/year", "hi": "बालिका का जन्म प्रमाण पत्र और अभिभावक का आधार जमा करें; न्यूनतम ₹250/वर्ष जमा करें", "as": "ছোৱালী শিশুৰ জন্ম প্ৰমাণপত্ৰ আৰু অভিভাৱকৰ আধাৰ জমা দিয়ক; নূন্যতম ₹250/বছৰ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://nsiindia.gov.in", "helpline": "1800-266-6868"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://nsiindia.gov.in"
+  },
+  {
+    "id": "atal-pension",
+    "name": {"en": "Atal Pension Yojana (APY)", "hi": "अटल पेंशन योजना", "as": "অটল পেঞ্চন যোজনা"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["pension", "social-security"],
+    "summary": {
+      "en": "Guaranteed monthly pension of ₹1,000–₹5,000 after 60 for workers in the unorganised sector.",
+      "hi": "असंगठित क्षेत्र के श्रमिकों के लिए 60 वर्ष के बाद ₹1,000–₹5,000 मासिक पेंशन की गारंटी।",
+      "as": "অসংগঠিত খণ্ডৰ কৰ্মীৰ বাবে 60 বছৰৰ পাছত ₹1,000–₹5,000 মাহেকীয়া পেঞ্চনৰ নিশ্চয়তা।"
+    },
+    "benefit": {"type": "pension", "amount": "₹1,000 – ₹5,000/month after age 60", "frequency": "Monthly after 60"},
+    "eligibility": {
+      "all": [
+        {"field": "age", "op": "between", "value": [18, 40]}
+      ],
+      "any": [],
+      "none": [
+        {"field": "occupation", "op": "in", "value": ["salaried"]}
+      ]
+    },
+    "documents": ["aadhaar", "bank-passbook"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Open APY account at any bank or post office linked to savings account", "hi": "बचत खाते से जुड़े किसी भी बैंक या डाकघर में APY खाता खोलें", "as": "সঞ্চয় একাউণ্টৰ সৈতে সংযুক্ত যিকোনো বেংক বা ডাকঘৰত APY একাউণ্ট খোলক"}},
+      {"step": 2, "text": {"en": "Choose pension amount (₹1K–₹5K) and auto-debit contribution starts", "hi": "पेंशन राशि (₹1K–₹5K) चुनें और ऑटो-डेबिट अंशदान शुरू हो जाता है", "as": "পেঞ্চনৰ পৰিমাণ (₹1K–₹5K) বাছক আৰু অটো-ডেবিট অৱদান আৰম্ভ হ'ব"}}
+    ],
+    "links": {"official": "https://npscra.nsdl.co.in", "helpline": "1800-110-069"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://npscra.nsdl.co.in"
+  },
+  {
+    "id": "pmjjby",
+    "name": {"en": "PM Jeevan Jyoti Bima Yojana (PMJJBY)", "hi": "प्रधानमंत्री जीवन ज्योति बीमा योजना", "as": "প্ৰধানমন্ত্ৰী জীৱন জ্যোতি বীমা যোজনা"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["insurance", "life-insurance"],
+    "summary": {
+      "en": "₹2 lakh life insurance cover at just ₹436/year for bank account holders aged 18–50.",
+      "hi": "18–50 वर्ष के बैंक खाताधारकों के लिए मात्र ₹436/वर्ष में ₹2 लाख जीवन बीमा।",
+      "as": "18–50 বছৰৰ বেংক একাউণ্টধাৰীৰ বাবে মাত্ৰ ₹436/বছৰত ₹2 লাখ জীৱন বীমা।"
+    },
+    "benefit": {"type": "insurance", "amount": "₹2 lakh life cover", "frequency": "Annual renewal"},
+    "eligibility": {
+      "all": [
+        {"field": "age", "op": "between", "value": [18, 50]},
+        {"field": "hasBankAccount", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "bank-passbook"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Enrol through your bank's internet banking, mobile app or branch", "hi": "अपने बैंक के इंटरनेट बैंकिंग, मोबाइल ऐप या शाखा के माध्यम से नामांकन करें", "as": "আপোনাৰ বেংকৰ ইন্টাৰনেট বেংকিং, মোবাইল এপ বা শাখাৰ জৰিয়তে নিবন্ধন কৰক"}},
+      {"step": 2, "text": {"en": "Premium of ₹436/year is auto-debited from your savings account", "hi": "₹436/वर्ष का प्रीमियम आपके बचत खाते से स्वतः डेबिट होता है", "as": "₹436/বছৰৰ প্ৰিমিয়াম আপোনাৰ সঞ্চয় একাউণ্টৰ পৰা স্বয়ংক্ৰিয়ভাৱে ডেবিট হ'ব"}}
+    ],
+    "links": {"official": "https://jansuraksha.gov.in", "helpline": "1800-180-1111"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://jansuraksha.gov.in"
+  },
+  {
+    "id": "pmsby",
+    "name": {"en": "PM Suraksha Bima Yojana (PMSBY)", "hi": "प्रधानमंत्री सुरक्षा बीमा योजना", "as": "প্ৰধানমন্ত্ৰী সুৰক্ষা বীমা যোজনা"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["insurance", "accident-insurance"],
+    "summary": {
+      "en": "₹2 lakh accidental death and disability insurance at just ₹20/year for bank account holders.",
+      "hi": "बैंक खाताधारकों के लिए मात्र ₹20/वर्ष में ₹2 लाख दुर्घटना मृत्यु और विकलांगता बीमा।",
+      "as": "বেংক একাউণ্টধাৰীৰ বাবে মাত্ৰ ₹20/বছৰত ₹2 লাখ দুৰ্ঘটনাজনিত মৃত্যু আৰু প্ৰতিবন্ধকতা বীমা।"
+    },
+    "benefit": {"type": "insurance", "amount": "₹2 lakh accidental cover", "frequency": "Annual renewal"},
+    "eligibility": {
+      "all": [
+        {"field": "age", "op": "between", "value": [18, 70]},
+        {"field": "hasBankAccount", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "bank-passbook"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Enrol via bank branch, internet banking or mobile app", "hi": "बैंक शाखा, इंटरनेट बैंकिंग या मोबाइल ऐप के माध्यम से नामांकन करें", "as": "বেংক শাখা, ইন্টাৰনেট বেংকিং বা মোবাইল এপৰ জৰিয়তে নিবন্ধন কৰক"}},
+      {"step": 2, "text": {"en": "₹20/year premium is auto-debited from savings account annually", "hi": "₹20/वर्ष प्रीमियम प्रतिवर्ष बचत खाते से स्वतः डेबिट होता है", "as": "₹20/বছৰ প্ৰিমিয়াম প্ৰতিবছৰ সঞ্চয় একাউণ্টৰ পৰা স্বয়ংক্ৰিয়ভাৱে ডেবিট হ'ব"}}
+    ],
+    "links": {"official": "https://jansuraksha.gov.in", "helpline": "1800-180-1111"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://jansuraksha.gov.in"
+  },
+  {
+    "id": "kisan-credit-card",
+    "name": {"en": "Kisan Credit Card (KCC)", "hi": "किसान क्रेडिट कार्ड", "as": "কিষাণ ক্ৰেডিট কাৰ্ড"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["agriculture", "credit"],
+    "summary": {
+      "en": "Short-term credit facility for farmers to meet crop cultivation and other agricultural needs.",
+      "hi": "फसल की खेती और अन्य कृषि जरूरतों को पूरा करने के लिए किसानों के लिए अल्पकालिक ऋण सुविधा।",
+      "as": "শস্য খেতি আৰু অন্যান্য কৃষি প্ৰয়োজনীয়তা পূৰণৰ বাবে কৃষকৰ বাবে স্বল্পমেয়াদী ঋণ সুবিধা।"
+    },
+    "benefit": {"type": "credit", "amount": "Credit limit based on land holding and crop pattern", "frequency": "Revolving credit"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["farmer"]},
+        {"field": "landOwner", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "land-record", "bank-passbook", "photo", "farmer-id"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at nearest bank branch (SBI, cooperative bank, RRB, etc.)", "hi": "निकटतम बैंक शाखा (SBI, सहकारी बैंक, RRB, आदि) में आवेदन करें", "as": "ওচৰৰ বেংক শাখাত (SBI, সমবায় বেংক, RRB, আদি) আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit land records and crop details; KCC is issued within 14 days", "hi": "भूमि अभिलेख और फसल विवरण जमा करें; KCC 14 दिनों में जारी होता है", "as": "মাটিৰ নথি আৰু শস্যৰ বিৱৰণ জমা দিয়ক; KCC 14 দিনৰ ভিতৰত জাৰি হ'ব"}}
+    ],
+    "links": {"official": "https://www.nabard.org", "helpline": "1800-180-1551"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://www.nabard.org"
+  },
+  {
+    "id": "pmfby",
+    "name": {"en": "PM Fasal Bima Yojana (PMFBY)", "hi": "प्रधानमंत्री फसल बीमा योजना", "as": "প্ৰধানমন্ত্ৰী ফছল বীমা যোজনা"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["agriculture", "insurance"],
+    "summary": {
+      "en": "Subsidised crop insurance to protect farmers against crop losses due to natural calamities.",
+      "hi": "प्राकृतिक आपदाओं से फसल नुकसान के खिलाफ किसानों की रक्षा के लिए सब्सिडाइज्ड फसल बीमा।",
+      "as": "প্ৰাকৃতিক দুৰ্যোগৰ কাৰণে শস্যৰ ক্ষতিৰ বিপৰীতে কৃষকক সুৰক্ষা দিবলৈ ভৰ্তুকিযুক্ত শস্য বীমা।"
+    },
+    "benefit": {"type": "insurance", "amount": "Full sum insured based on crop and area; premium only 1.5–5%", "frequency": "Per season"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["farmer"]},
+        {"field": "landOwner", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "land-record", "farmer-id", "bank-passbook", "kisan-credit-card"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at bank/CSC or via pmfby.gov.in before crop season deadline", "hi": "फसल मौसम की समय सीमा से पहले बैंक/CSC या pmfby.gov.in के माध्यम से आवेदन करें", "as": "শস্যৰ বতৰৰ শেষ তাৰিখৰ আগতে বেংক/CSC বা pmfby.gov.in-ৰ জৰিয়তে আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Pay premium (1.5% for Kharif, 2% for Rabi, 5% for horticulture)", "hi": "प्रीमियम भुगतान करें (खरीफ के लिए 1.5%, रबी के लिए 2%, बागवानी के लिए 5%)", "as": "প্ৰিমিয়াম পৰিশোধ কৰক (খাৰিফৰ বাবে 1.5%, ৰবিৰ বাবে 2%, বাগিচাৰ বাবে 5%)"}}
+    ],
+    "links": {"official": "https://pmfby.gov.in", "helpline": "1800-180-1551"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmfby.gov.in"
+  },
+  {
+    "id": "nsap-oap",
+    "name": {"en": "National Social Assistance – Old Age Pension (NSAP-OAP)", "hi": "राष्ट्रीय सामाजिक सहायता – वृद्धावस्था पेंशन", "as": "ৰাষ্ট্ৰীয় সামাজিক সহায় – বৃদ্ধাৱস্থা পেঞ্চন"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["pension", "elderly"],
+    "summary": {
+      "en": "Monthly pension of ₹200–₹500 for BPL citizens aged 60 and above.",
+      "hi": "60 वर्ष और उससे अधिक उम्र के BPL नागरिकों के लिए ₹200–₹500 मासिक पेंशन।",
+      "as": "60 বছৰ আৰু তাৰ ওপৰৰ BPL নাগৰিকৰ বাবে মাহেকীয়া ₹200–₹500 পেঞ্চন।"
+    },
+    "benefit": {"type": "cash", "amount": "₹200/month (60–79 yrs) / ₹500/month (80+ yrs)", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "age", "op": "gte", "value": 60},
+        {"field": "bpl", "op": "eq", "value": true},
+        {"field": "income", "op": "lt", "value": 100000}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "bpl-card", "birth-certificate", "bank-passbook", "income-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at Gram Panchayat (rural) or Municipal Office (urban)", "hi": "ग्राम पंचायत (ग्रामीण) या नगरपालिका कार्यालय (शहरी) में आवेदन करें", "as": "গ্ৰাম পঞ্চায়ত (গ্ৰামীণ) বা নগৰপালিকা কাৰ্যালয়ত (নগৰীয়া) আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit age proof, BPL card and bank details for direct benefit transfer", "hi": "प्रत्यक्ष लाभ अंतरण के लिए आयु प्रमाण, BPL कार्ड और बैंक विवरण जमा करें", "as": "প্ৰত্যক্ষ সুবিধা হস্তান্তৰৰ বাবে বয়সৰ প্ৰমাণ, BPL কাৰ্ড আৰু বেংকৰ বিৱৰণ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://nsap.nic.in", "helpline": "1800-111-555"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://nsap.nic.in"
+  },
+  {
+    "id": "nfbs",
+    "name": {"en": "National Family Benefit Scheme (NFBS)", "hi": "राष्ट्रीय पारिवारिक लाभ योजना", "as": "ৰাষ্ট্ৰীয় পাৰিবাৰিক সুবিধা আঁচনি"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["welfare", "social-security"],
+    "summary": {
+      "en": "One-time ₹20,000 assistance to BPL families upon death of the primary breadwinner.",
+      "hi": "प्राथमिक कमाऊ सदस्य की मृत्यु पर BPL परिवारों को एकमुश्त ₹20,000 की सहायता।",
+      "as": "মুখ্য উপাৰ্জনকাৰী সদস্যৰ মৃত্যুত BPL পৰিয়ালসমূহক একমুঠ ₹20,000 সহায়।"
+    },
+    "benefit": {"type": "cash", "amount": "₹20,000 one-time", "frequency": "One-time"},
+    "eligibility": {
+      "all": [
+        {"field": "bpl", "op": "eq", "value": true},
+        {"field": "age", "op": "lt", "value": 65}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "bpl-card", "death-certificate", "income-certificate", "bank-passbook"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply within 90 days of death at District Social Welfare Office", "hi": "मृत्यु के 90 दिनों के भीतर जिला समाज कल्याण कार्यालय में आवेदन करें", "as": "মৃত্যুৰ 90 দিনৰ ভিতৰত জিলা সমাজ কল্যাণ কাৰ্যালয়ত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit death certificate, BPL card and income proof of deceased", "hi": "मृतक का मृत्यु प्रमाण पत्र, BPL कार्ड और आय प्रमाण जमा करें", "as": "মৃত ব্যক্তিৰ মৃত্যু প্ৰমাণপত্ৰ, BPL কাৰ্ড আৰু আয়ৰ প্ৰমাণ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://nsap.nic.in", "helpline": "1800-111-555"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://nsap.nic.in"
+  },
+  {
+    "id": "pm-svanidhi",
+    "name": {"en": "PM SVANidhi – Street Vendor Microloan", "hi": "पीएम स्वनिधि – स्ट्रीट वेंडर माइक्रोलोन", "as": "PM SVANidhi – ফেৰিৱালা মাইক্ৰ'লোন"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["entrepreneurship", "loan", "urban"],
+    "summary": {
+      "en": "Collateral-free working capital loan of ₹10,000 for street vendors to restart livelihoods.",
+      "hi": "स्ट्रीट वेंडरों को आजीविका पुनः शुरू करने के लिए ₹10,000 तक बिना गारंटी कार्यशील पूंजी ऋण।",
+      "as": "ফেৰিৱালাসকলক জীৱিকা পুনৰ আৰম্ভ কৰিবলৈ জামানত-মুক্ত ₹10,000 কাৰ্যকৰী মূলধন ঋণ।"
+    },
+    "benefit": {"type": "loan", "amount": "₹10,000 (1st), ₹20,000 (2nd), ₹50,000 (3rd tranche)", "frequency": "In tranches"},
+    "eligibility": {
+      "all": [
+        {"field": "streetVendor", "op": "eq", "value": true}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "voter-id", "bank-passbook", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at pmsvanidhi.mohua.gov.in or through lending institutions", "hi": "pmsvanidhi.mohua.gov.in या ऋण संस्थानों के माध्यम से आवेदन करें", "as": "pmsvanidhi.mohua.gov.in বা ঋণ প্ৰতিষ্ঠানৰ জৰিয়তে আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Get Letter of Recommendation (LoR) from ULB/TVC and submit to bank", "hi": "ULB/TVC से अनुशंसा पत्र (LoR) प्राप्त करें और बैंक को जमा करें", "as": "ULB/TVC-ৰ পৰা অনুশংসাপত্ৰ (LoR) লওক আৰু বেংকলৈ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://pmsvanidhi.mohua.gov.in", "helpline": "1800-11-1979"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmsvanidhi.mohua.gov.in"
+  },
+  {
+    "id": "pm-poshan",
+    "name": {"en": "PM POSHAN (Mid-Day Meal Scheme)", "hi": "पीएम पोषण (मध्याह्न भोजन योजना)", "as": "PM পোষণ (মধ্যাহ্ন ভোজন আঁচনি)"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["education", "nutrition"],
+    "summary": {
+      "en": "Free hot cooked mid-day meal for children studying in government and government-aided schools (Class 1–8).",
+      "hi": "सरकारी और सरकारी सहायता प्राप्त स्कूलों (कक्षा 1–8) में पढ़ने वाले बच्चों के लिए मुफ्त गर्म पका हुआ मध्याह्न भोजन।",
+      "as": "চৰকাৰী আৰু চৰকাৰী সাহায্যপ্ৰাপ্ত বিদ্যালয়ত (শ্ৰেণী 1–8) পঢ়া শিশুৰ বাবে বিনামূলীয়া গৰম ৰন্ধা মধ্যাহ্ন ভোজন।"
+    },
+    "benefit": {"type": "in-kind", "amount": "Daily nutritious mid-day meal", "frequency": "Daily on school days"},
+    "eligibility": {
+      "all": [
+        {"field": "occupation", "op": "in", "value": ["student"]},
+        {"field": "age", "op": "between", "value": [6, 14]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["school-certificate", "aadhaar"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Automatically provided to enrolled students in government schools; no separate application needed", "hi": "सरकारी स्कूलों में नामांकित छात्रों को स्वतः प्रदान किया जाता है; अलग आवेदन की आवश्यकता नहीं", "as": "চৰকাৰী বিদ্যালয়ত নামভৰ্তি শিক্ষাৰ্থীসকলক স্বয়ংক্ৰিয়ভাৱে প্ৰদান কৰা হয়; পৃথক আবেদনৰ প্ৰয়োজন নাই"}}
+    ],
+    "links": {"official": "https://pmposhan.education.gov.in", "helpline": "1800-180-8004"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://pmposhan.education.gov.in"
+  },
+  {
+    "id": "scholarship-disability",
+    "name": {"en": "National Scholarship for Persons with Disabilities", "hi": "दिव्यांगजनों के लिए राष्ट्रीय छात्रवृत्ति", "as": "প্ৰতিবন্ধী ব্যক্তিৰ বাবে ৰাষ্ট্ৰীয় বৃত্তি"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["education", "scholarship", "disability"],
+    "summary": {
+      "en": "Scholarship for students with disabilities to pursue higher education and vocational training.",
+      "hi": "उच्च शिक्षा और व्यावसायिक प्रशिक्षण प्राप्त करने के लिए दिव्यांग छात्रों के लिए छात्रवृत्ति।",
+      "as": "উচ্চ শিক্ষা আৰু বৃত্তিমূলক প্ৰশিক্ষণ গ্ৰহণৰ বাবে প্ৰতিবন্ধী শিক্ষাৰ্থীৰ বাবে বৃত্তি।"
+    },
+    "benefit": {"type": "cash", "amount": "₹500 – ₹20,000/year depending on level", "frequency": "Annual"},
+    "eligibility": {
+      "all": [
+        {"field": "disability", "op": "eq", "value": true},
+        {"field": "occupation", "op": "in", "value": ["student"]}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "disability-certificate", "marksheet-10th", "marksheet-12th", "bank-passbook", "school-certificate"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply online at scholarships.gov.in under DEPwD schemes", "hi": "DEPwD योजनाओं के तहत scholarships.gov.in पर ऑनलाइन आवेदन करें", "as": "DEPwD আঁচনিৰ অধীনত scholarships.gov.in-ত অনলাইনত আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Upload disability certificate and academic documents before closing date", "hi": "समापन तिथि से पहले विकलांगता प्रमाण पत्र और शैक्षणिक दस्तावेज अपलोड करें", "as": "বন্ধৰ তাৰিখৰ আগতে প্ৰতিবন্ধকতাৰ প্ৰমাণপত্ৰ আৰু শৈক্ষণিক নথি আপলোড কৰক"}}
+    ],
+    "links": {"official": "https://scholarships.gov.in", "helpline": "1800-11-0019"},
+    "applyOnline": true,
+    "deadline": "2026-11-30",
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://scholarships.gov.in"
+  },
+  {
+    "id": "nats",
+    "name": {"en": "National Apprenticeship Training Scheme (NATS)", "hi": "राष्ट्रीय प्रशिक्षुता प्रशिक्षण योजना", "as": "ৰাষ্ট্ৰীয় শিক্ষানৱিশ প্ৰশিক্ষণ আঁচনি"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["employment", "skill-development"],
+    "summary": {
+      "en": "On-the-job apprenticeship training with stipend for students and unemployed youth (16–30 years).",
+      "hi": "16–30 वर्ष के छात्रों और बेरोजगार युवाओं के लिए वजीफे के साथ ऑन-द-जॉब प्रशिक्षुता प्रशिक्षण।",
+      "as": "16–30 বছৰৰ শিক্ষাৰ্থী আৰু বেকাৰ যুৱকৰ বাবে বৃত্তিসহ কাৰ্যস্থল প্ৰশিক্ষণ।"
+    },
+    "benefit": {"type": "stipend", "amount": "₹1,700–₹7,700/month stipend", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "age", "op": "between", "value": [16, 30]}
+      ],
+      "any": [
+        {"field": "occupation", "op": "in", "value": ["student", "unemployed"]}
+      ],
+      "none": []
+    },
+    "documents": ["aadhaar", "marksheet-10th", "marksheet-12th", "degree-certificate", "bank-passbook"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Register at apprenticeshipindia.org and browse available positions", "hi": "apprenticeshipindia.org पर पंजीकरण करें और उपलब्ध पदों को ब्राउज़ करें", "as": "apprenticeshipindia.org-ত নিবন্ধন কৰক আৰু উপলব্ধ পদসমূহ চাওক"}},
+      {"step": 2, "text": {"en": "Apply to establishments offering apprenticeship in your trade", "hi": "अपने व्यापार में प्रशिक्षुता प्रदान करने वाले प्रतिष्ठानों में आवेदन करें", "as": "আপোনাৰ বাণিজ্যত শিক্ষানৱিশ প্ৰদান কৰা প্ৰতিষ্ঠানত আবেদন কৰক"}}
+    ],
+    "links": {"official": "https://apprenticeshipindia.org", "helpline": "1800-123-9626"},
+    "applyOnline": true,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://apprenticeshipindia.org"
+  },
+  {
+    "id": "widow-pension-central",
+    "name": {"en": "Indira Gandhi National Widow Pension Scheme (IGNWPS)", "hi": "इंदिरा गांधी राष्ट्रीय विधवा पेंशन योजना", "as": "ইন্দিৰা গান্ধী ৰাষ্ট্ৰীয় বিধৱা পেঞ্চন আঁচনি"},
+    "level": "central",
+    "state": "ALL",
+    "category": ["pension", "women", "social-security"],
+    "summary": {
+      "en": "Monthly pension of ₹300 for widows aged 40–79 and ₹500 for widows aged 80+ from BPL families.",
+      "hi": "BPL परिवारों की 40–79 वर्ष की विधवाओं के लिए ₹300 और 80+ वर्ष की विधवाओं के लिए ₹500 मासिक पेंशन।",
+      "as": "BPL পৰিয়ালৰ 40–79 বছৰৰ বিধৱাৰ বাবে ₹300 আৰু 80+ বছৰৰ বিধৱাৰ বাবে ₹500 মাহেকীয়া পেঞ্চন।"
+    },
+    "benefit": {"type": "cash", "amount": "₹300/month (40–79 yrs) / ₹500/month (80+ yrs)", "frequency": "Monthly"},
+    "eligibility": {
+      "all": [
+        {"field": "gender", "op": "eq", "value": "female"},
+        {"field": "widow", "op": "eq", "value": true},
+        {"field": "income", "op": "lt", "value": 150000}
+      ],
+      "any": [],
+      "none": []
+    },
+    "documents": ["aadhaar", "bpl-card", "income-certificate", "bank-passbook", "photo"],
+    "howToApply": [
+      {"step": 1, "text": {"en": "Apply at Gram Panchayat (rural) or Urban Local Body (urban)", "hi": "ग्राम पंचायत (ग्रामीण) या शहरी स्थानीय निकाय (शहरी) में आवेदन करें", "as": "গ্ৰাম পঞ্চায়ত (গ্ৰামীণ) বা নগৰ স্থানীয় সংস্থাত (নগৰীয়া) আবেদন কৰক"}},
+      {"step": 2, "text": {"en": "Submit husband's death certificate, BPL card and income proof", "hi": "पति का मृत्यु प्रमाण पत्र, BPL कार्ड और आय प्रमाण जमा करें", "as": "স্বামীৰ মৃত্যু প্ৰমাণপত্ৰ, BPL কাৰ্ড আৰু আয়ৰ প্ৰমাণ জমা দিয়ক"}}
+    ],
+    "links": {"official": "https://nsap.nic.in", "helpline": "1800-111-555"},
+    "applyOnline": false,
+    "deadline": null,
+    "lastVerified": "2026-11-01",
+    "verifiedBy": "schemesetu-maintainer",
+    "status": "active",
+    "source": "https://nsap.nic.in"
+  }
+]

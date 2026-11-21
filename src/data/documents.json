@@ -1,0 +1,202 @@
+{
+  "aadhaar": {
+    "en": "Aadhaar Card",
+    "hi": "आधार कार्ड",
+    "as": "আধাৰ কাৰ্ড",
+    "howToGet": {
+      "en": "Visit nearest Aadhaar Seva Kendra or uidai.gov.in",
+      "hi": "निकटतम आधार सेवा केंद्र या uidai.gov.in पर जाएं",
+      "as": "ওচৰৰ আধাৰ সেৱা কেন্দ্ৰ বা uidai.gov.in-ত যাওক"
+    }
+  },
+  "pan-card": {
+    "en": "PAN Card",
+    "hi": "पैन कार्ड",
+    "as": "PAN কাৰ্ড",
+    "howToGet": {
+      "en": "Apply online at incometax.gov.in/iec/foportal or through UTI/NSDL centres",
+      "hi": "incometax.gov.in/iec/foportal पर ऑनलाइन या UTI/NSDL केंद्रों के माध्यम से आवेदन करें",
+      "as": "incometax.gov.in/iec/foportal-ত অনলাইনত বা UTI/NSDL কেন্দ্ৰৰ জৰিয়তে আবেদন কৰক"
+    }
+  },
+  "voter-id": {
+    "en": "Voter ID Card (EPIC)",
+    "hi": "मतदाता पहचान पत्र (EPIC)",
+    "as": "ভোটাৰ পৰিচয়পত্ৰ (EPIC)",
+    "howToGet": {
+      "en": "Apply at voters.eci.gov.in or visit nearest Electoral Registration Office",
+      "hi": "voters.eci.gov.in पर आवेदन करें या निकटतम निर्वाचन पंजीकरण कार्यालय पर जाएं",
+      "as": "voters.eci.gov.in-ত আবেদন কৰক বা ওচৰৰ নিৰ্বাচন পঞ্জীয়ন কাৰ্যালয়লৈ যাওক"
+    }
+  },
+  "ration-card": {
+    "en": "Ration Card",
+    "hi": "राशन कार्ड",
+    "as": "ৰেচন কাৰ্ড",
+    "howToGet": {
+      "en": "Apply at the Food Civil Supplies & Consumer Affairs department of your state",
+      "hi": "अपने राज्य के खाद्य नागरिक आपूर्ति एवं उपभोक्ता मामले विभाग में आवेदन करें",
+      "as": "আপোনাৰ ৰাজ্যৰ খাদ্য নাগৰিক যোগান আৰু গ্ৰাহক বিষয়ক বিভাগত আবেদন কৰক"
+    }
+  },
+  "bpl-card": {
+    "en": "BPL Card / Certificate",
+    "hi": "BPL कार्ड / प्रमाण पत्र",
+    "as": "BPL কাৰ্ড / প্ৰমাণপত্ৰ",
+    "howToGet": {
+      "en": "Issued by Gram Panchayat (rural) or Municipal Corporation (urban) based on SECC data",
+      "hi": "SECC डेटा के आधार पर ग्राम पंचायत (ग्रामीण) या नगर निगम (शहरी) द्वारा जारी",
+      "as": "SECC ডেটাৰ ভিত্তিত গ্ৰাম পঞ্চায়ত (গ্ৰামীণ) বা নগৰপালিকা (নগৰীয়া) দ্বাৰা জাৰি কৰা হয়"
+    }
+  },
+  "bank-passbook": {
+    "en": "Bank Passbook / Account Statement",
+    "hi": "बैंक पासबुक / खाता विवरण",
+    "as": "বেংক পাছবুক / একাউণ্ট বিবৃতি",
+    "howToGet": {
+      "en": "Collect from your bank branch; open a zero-balance account under PMJDY if you don't have one",
+      "hi": "अपनी बैंक शाखा से प्राप्त करें; अगर नहीं है तो PMJDY के तहत जीरो बैलेंस खाता खोलें",
+      "as": "আপোনাৰ বেংক শাখাৰ পৰা সংগ্ৰহ কৰক; নাথাকিলে PMJDY-ৰ অধীনত শূন্য জমা একাউণ্ট খোলক"
+    }
+  },
+  "land-record": {
+    "en": "Land Record / Patta",
+    "hi": "भूमि अभिलेख / पट्टा",
+    "as": "মাটিৰ নথি / পট্টা",
+    "howToGet": {
+      "en": "Obtain from the Revenue Department / Circle Office or via state land record portal (e.g., dharitree.assam.gov.in for Assam)",
+      "hi": "राजस्व विभाग / सर्किल कार्यालय से या राज्य भूमि अभिलेख पोर्टल के माध्यम से प्राप्त करें",
+      "as": "ৰাজহ বিভাগ / চাৰ্কেল কাৰ্যালয়ৰ পৰা বা ৰাজ্যৰ মাটিৰ নথি পৰ্টেলৰ জৰিয়তে (যেনে Assam-ৰ বাবে dharitree.assam.gov.in) পাওক"
+    }
+  },
+  "caste-certificate": {
+    "en": "Caste Certificate (SC/ST/OBC)",
+    "hi": "जाति प्रमाण पत्र (SC/ST/OBC)",
+    "as": "জাতিৰ প্ৰমাণপত্ৰ (SC/ST/OBC)",
+    "howToGet": {
+      "en": "Apply at Sub-Divisional Magistrate (SDM) or Block Development Officer office; online via state e-district portals",
+      "hi": "उप-मंडल मजिस्ट्रेट (SDM) या खंड विकास अधिकारी कार्यालय में आवेदन करें; ऑनलाइन राज्य ई-डिस्ट्रिक्ट पोर्टल के माध्यम से",
+      "as": "উপ-মহকুমা দণ্ডাধীশ (SDM) বা খণ্ড উন্নয়ন বিষয়াৰ কাৰ্যালয়ত আবেদন কৰক; অনলাইনত ৰাজ্যৰ ই-ডিষ্ট্ৰিক্ট পৰ্টেলৰ জৰিয়তে"
+    }
+  },
+  "income-certificate": {
+    "en": "Income Certificate",
+    "hi": "आय प्रमाण पत्र",
+    "as": "আয়ৰ প্ৰমাণপত্ৰ",
+    "howToGet": {
+      "en": "Apply at Sub-Divisional Magistrate (SDM) office or state e-district portal; valid for 1 year",
+      "hi": "उप-मंडल मजिस्ट्रेट (SDM) कार्यालय या राज्य ई-डिस्ट्रिक्ट पोर्टल पर आवेदन करें; 1 वर्ष के लिए वैध",
+      "as": "উপ-মহকুমা দণ্ডাধীশ (SDM) কাৰ্যালয় বা ৰাজ্যৰ ই-ডিষ্ট্ৰিক্ট পৰ্টেলত আবেদন কৰক; 1 বছৰৰ বাবে বৈধ"
+    }
+  },
+  "disability-certificate": {
+    "en": "Disability Certificate / UDID Card",
+    "hi": "दिव्यांगता प्रमाण पत्र / UDID कार्ड",
+    "as": "প্ৰতিবন্ধকতাৰ প্ৰমাণপত্ৰ / UDID কাৰ্ড",
+    "howToGet": {
+      "en": "Apply at swavlambancard.gov.in or District Hospital medical board; minimum 40% disability required",
+      "hi": "swavlambancard.gov.in या जिला अस्पताल चिकित्सा बोर्ड में आवेदन करें; न्यूनतम 40% विकलांगता आवश्यक",
+      "as": "swavlambancard.gov.in বা জিলা চিকিৎসালয় চিকিৎসা ব'ৰ্ডত আবেদন কৰক; নূন্যতম 40% প্ৰতিবন্ধকতা আৱশ্যক"
+    }
+  },
+  "birth-certificate": {
+    "en": "Birth Certificate",
+    "hi": "जन्म प्रमाण पत्र",
+    "as": "জন্ম প্ৰমাণপত্ৰ",
+    "howToGet": {
+      "en": "Apply at the local Municipal Corporation, Gram Panchayat, or Civil Registration System (CRS) portal; hospital-issued for recent births",
+      "hi": "स्थानीय नगर निगम, ग्राम पंचायत या CRS पोर्टल पर आवेदन करें; हाल के जन्म के लिए अस्पताल से जारी",
+      "as": "স্থানীয় নগৰপালিকা, গ্ৰাম পঞ্চায়ত বা CRS পৰ্টেলত আবেদন কৰক; শেহতীয়া জন্মৰ বাবে চিকিৎসালয়ৰ পৰা জাৰি"
+    }
+  },
+  "domicile-certificate": {
+    "en": "Domicile / Residence Certificate",
+    "hi": "अधिवास / निवास प्रमाण पत्र",
+    "as": "বাসিন্দা / বাসস্থান প্ৰমাণপত্ৰ",
+    "howToGet": {
+      "en": "Apply at Sub-Divisional Magistrate (SDM) office or state e-district portal with proof of residency (3–15 years depending on state)",
+      "hi": "निवास प्रमाण (राज्य के अनुसार 3–15 वर्ष) के साथ SDM कार्यालय या ई-डिस्ट्रिक्ट पोर्टल पर आवेदन करें",
+      "as": "বাসস্থানৰ প্ৰমাণসহ (ৰাজ্য অনুযায়ী 3–15 বছৰ) SDM কাৰ্যালয় বা ই-ডিষ্ট্ৰিক্ট পৰ্টেলত আবেদন কৰক"
+    }
+  },
+  "photo": {
+    "en": "Passport-size Photograph",
+    "hi": "पासपोर्ट आकार का फोटो",
+    "as": "পাছপৰ্ট আকাৰৰ ফটো",
+    "howToGet": {
+      "en": "Get clicked at any photo studio; colour photograph with white/light background, taken within last 6 months",
+      "hi": "किसी भी फोटो स्टूडियो पर खिंचवाएं; पिछले 6 महीनों में खींची गई सफेद/हल्की पृष्ठभूमि वाली रंगीन तस्वीर",
+      "as": "যিকোনো ফটো ষ্টুডিঅ'ত তুলি আনক; শেষ 6 মাহৰ ভিতৰত তোলা বগা/পাতল পটভূমিৰ ৰঙীন ফটো"
+    }
+  },
+  "marksheet-10th": {
+    "en": "Class 10 Marksheet (SSLC/HSLC/Matriculation)",
+    "hi": "कक्षा 10 अंकपत्र (SSLC/HSLC/मैट्रिकुलेशन)",
+    "as": "শ্ৰেণী 10 মাৰ্কশ্বীট (SSLC/HSLC/মেট্ৰিকুলেচন)",
+    "howToGet": {
+      "en": "Issued by your State Board of Secondary Education at the time of result; duplicate available from board office",
+      "hi": "परिणाम के समय राज्य माध्यमिक शिक्षा बोर्ड द्वारा जारी; बोर्ड कार्यालय से डुप्लीकेट उपलब्ध",
+      "as": "ফলাফলৰ সময়ত ৰাজ্যৰ মাধ্যমিক শিক্ষা ব'ৰ্ডৰ দ্বাৰা জাৰি; ব'ৰ্ড কাৰ্যালয়ৰ পৰা ডুপ্লিকেট উপলব্ধ"
+    }
+  },
+  "marksheet-12th": {
+    "en": "Class 12 Marksheet (Higher Secondary / HSSLC)",
+    "hi": "कक्षा 12 अंकपत्र (उच्चतर माध्यमिक / HSSLC)",
+    "as": "শ্ৰেণী 12 মাৰ্কশ্বীট (উচ্চতৰ মাধ্যমিক / HSSLC)",
+    "howToGet": {
+      "en": "Issued by State Higher Secondary Education Board; duplicate available from board office or DigiLocker",
+      "hi": "राज्य उच्चतर माध्यमिक शिक्षा बोर्ड द्वारा जारी; बोर्ड कार्यालय या DigiLocker से डुप्लीकेट उपलब्ध",
+      "as": "ৰাজ্যৰ উচ্চতৰ মাধ্যমিক শিক্ষা ব'ৰ্ডৰ দ্বাৰা জাৰি; ব'ৰ্ড কাৰ্যালয় বা DigiLocker-ৰ পৰা ডুপ্লিকেট উপলব্ধ"
+    }
+  },
+  "degree-certificate": {
+    "en": "Degree / Graduation Certificate",
+    "hi": "डिग्री / स्नातक प्रमाण पत्र",
+    "as": "ডিগ্ৰী / স্নাতক প্ৰমাণপত্ৰ",
+    "howToGet": {
+      "en": "Issued by your University after convocation; apply for duplicate at the university registrar office",
+      "hi": "दीक्षांत समारोह के बाद विश्वविद्यालय द्वारा जारी; विश्वविद्यालय कुलसचिव कार्यालय में डुप्लीकेट के लिए आवेदन करें",
+      "as": "সমাবর্তনৰ পাছত বিশ্ববিদ্যালয়ৰ দ্বাৰা জাৰি; ডুপ্লিকেটৰ বাবে বিশ্ববিদ্যালয় ৰেজিষ্ট্ৰাৰ কাৰ্যালয়ত আবেদন কৰক"
+    }
+  },
+  "farmer-id": {
+    "en": "Farmer ID / PM-KISAN Registration Number",
+    "hi": "किसान आईडी / पीएम-किसान पंजीकरण संख्या",
+    "as": "কৃষক ID / PM-KISAN পঞ্জীয়ন নম্বৰ",
+    "howToGet": {
+      "en": "Register on pmkisan.gov.in or visit nearest CSC with Aadhaar and land records; Farmer ID generated automatically",
+      "hi": "pmkisan.gov.in पर पंजीकरण करें या आधार और भूमि अभिलेख के साथ निकटतम CSC पर जाएं; किसान आईडी स्वतः बनती है",
+      "as": "pmkisan.gov.in-ত নিবন্ধন কৰক বা আধাৰ আৰু মাটিৰ নথি লৈ ওচৰৰ CSC-ত যাওক; কৃষক ID স্বয়ংক্ৰিয়ভাৱে তৈয়াৰ হয়"
+    }
+  },
+  "kisan-credit-card": {
+    "en": "Kisan Credit Card (KCC)",
+    "hi": "किसान क्रेडिट कार्ड (KCC)",
+    "as": "কিষাণ ক্ৰেডিট কাৰ্ড (KCC)",
+    "howToGet": {
+      "en": "Apply at any bank branch with land records and farmer ID; issued within 14 working days",
+      "hi": "भूमि अभिलेख और किसान आईडी के साथ किसी भी बैंक शाखा में आवेदन करें; 14 कार्य दिवसों में जारी होता है",
+      "as": "মাটিৰ নথি আৰু কৃষক ID লৈ যিকোনো বেংক শাখাত আবেদন কৰক; 14 কাৰ্য দিৱসৰ ভিতৰত জাৰি হয়"
+    }
+  },
+  "business-registration": {
+    "en": "Business Registration / Udyam Certificate",
+    "hi": "व्यवसाय पंजीकरण / उद्यम प्रमाण पत्र",
+    "as": "ব্যৱসায় পঞ্জীয়ন / উদ্যম প্ৰমাণপত্ৰ",
+    "howToGet": {
+      "en": "Register at udyamregistration.gov.in for MSME/Udyam certificate; shop acts registration from local municipal body",
+      "hi": "MSME/उद्यम प्रमाण पत्र के लिए udyamregistration.gov.in पर पंजीकरण करें; स्थानीय नगर निकाय से दुकान अधिनियम पंजीकरण",
+      "as": "MSME/উদ্যম প্ৰমাণপত্ৰৰ বাবে udyamregistration.gov.in-ত নিবন্ধন কৰক; স্থানীয় নগৰপালিকাৰ পৰা দোকান আইন পঞ্জীয়ন"
+    }
+  },
+  "school-certificate": {
+    "en": "School / College Enrollment Certificate",
+    "hi": "विद्यालय / महाविद्यालय नामांकन प्रमाण पत्र",
+    "as": "বিদ্যালয় / মহাবিদ্যালয় নামভৰ্তি প্ৰমাণপত্ৰ",
+    "howToGet": {
+      "en": "Obtained from the Head of Institution (Principal/Headmaster); issued on school/college letterhead confirming enrollment",
+      "hi": "संस्था प्रमुख (प्रधानाचार्य/हेडमास्टर) से प्राप्त; नामांकन की पुष्टि करते हुए स्कूल/कॉलेज के लेटरहेड पर जारी",
+      "as": "প্ৰতিষ্ঠান প্ৰধানৰ (অধ্যক্ষ/প্ৰধান শিক্ষক) পৰা প্ৰাপ্ত; নামভৰ্তি নিশ্চিত কৰি বিদ্যালয়/মহাবিদ্যালয়ৰ লেটাৰহেডত জাৰি"
+    }
+  }
+}
