@@ -29,6 +29,17 @@ export default function App() {
     initLanguage(lang);
   }, [lang]);
 
+  // Sync dark / high-contrast class on <html> and <body>
+  useEffect(() => {
+    if (hc) {
+      document.documentElement.classList.add('high-contrast', 'dark');
+      document.body.classList.add('high-contrast', 'dark');
+    } else {
+      document.documentElement.classList.remove('high-contrast', 'dark');
+      document.body.classList.remove('high-contrast', 'dark');
+    }
+  }, [hc]);
+
   useEffect(() => {
     const handleHashChange = () => {
       setRoute(getRoute());
@@ -65,7 +76,7 @@ export default function App() {
 
   const containerClasses = [
     'min-h-screen flex flex-col',
-    hc ? 'high-contrast' : '',
+    hc ? 'high-contrast dark' : '',
     fs === 'large' ? 'font-large' : fs === 'x-large' ? 'font-x-large' : ''
   ].filter(Boolean).join(' ');
 
