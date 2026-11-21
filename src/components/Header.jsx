@@ -1,57 +1,13 @@
-import { useState, useEffect, useRef } from 'preact/hooks';
-import QRCode from 'qrcode';
+import { useState } from 'preact/hooks';
 import { language, fontSize, highContrast, setLanguage, setFontSize, toggleHighContrast } from '../store/profile.js';
 import { t } from '../utils/i18n.js';
 
-/** Renders a QR code for `url` into a <canvas> element */
-function QRCanvas({ url }) {
-  const canvasRef = useRef(null);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    if (!canvasRef.current || !url) return;
-    setError(false);
-    QRCode.toCanvas(canvasRef.current, url, {
-      width: 200,
-      margin: 1,
-      color: { dark: '#000000', light: '#FFFFFF' },
-      errorCorrectionLevel: 'M',
-    }).catch(() => setError(true));
-  }, [url]);
-
-  if (error) {
-    return (
-      <div class="w-48 h-48 flex flex-col items-center justify-center bg-gray-100 rounded-xl border border-gray-200 text-gray-400 text-xs text-center px-3">
-        <span class="text-3xl mb-1">⚠️</span>
-        Could not generate QR.<br />Use the link below.
-      </div>
-    );
-  }
-
-  return (
-    <canvas
-      ref={canvasRef}
-      class="rounded-xl mx-auto shadow-sm"
-      style={{ width: '200px', height: '200px', imageRendering: 'pixelated' }}
-    />
-  );
-}
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [qrModalOpen, setQrModalOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
 
   const lang = language.value;
   const fs = fontSize.value;
   const hc = highContrast.value;
-
-  // Determine the mobile-accessible URL
-  const networkIp = '10.162.43.45';
-  const mobileUrl =
-    window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'
-      ? `${window.location.protocol}//${window.location.host}`
-      : `http://${networkIp}:5173`;
 
   const cycleFontSize = () => {
     if (fs === 'normal') setFontSize('large');
@@ -66,12 +22,6 @@ export default function Header() {
     { href: '#/saved', label: t('nav.saved', {}, lang) },
     { href: '#/about', label: t('nav.about', {}, lang) },
   ];
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(mobileUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm transition-colors">
@@ -111,18 +61,8 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Actions */}
+        {/* Actions: A11y & Lang */}
         <div class="flex items-center gap-2 sm:gap-3">
-          {/* Mobile QR Button */}
-          <button
-            onClick={() => setQrModalOpen(true)}
-            title="Open on Mobile / Scan QR"
-            class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-orange-50 border border-orange-200 text-[#FF9933] hover:bg-orange-100 transition-colors flex items-center gap-1"
-          >
-            <span>📱</span>
-            <span class="hidden sm:inline">Mobile</span>
-          </button>
-
           {/* Font Size Toggle */}
           <button
             onClick={cycleFontSize}
@@ -195,57 +135,6 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-        </div>
-      )}
-
-      {/* Mobile Connect & QR Code Modal */}
-      {qrModalOpen && (
-        <div
-          class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
-          onClick={() => setQrModalOpen(false)}
-        >
-          <div
-            class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center space-y-4 shadow-2xl border border-gray-100"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div class="w-12 h-12 mx-auto rounded-2xl bg-orange-100 text-[#FF9933] flex items-center justify-center text-2xl font-bold">
-              📱
-            </div>
-
-            <div>
-              <h3 class="text-xl font-bold text-gray-900">Open on Your Phone</h3>
-              <p class="text-xs text-gray-500 mt-1">
-                Make sure your phone is on the <strong>same Wi-Fi</strong> as this device.
-              </p>
-            </div>
-
-            {/* QR Code — rendered on canvas with pure white quiet zone, fully offline */}
-            <div class="p-4 rounded-2xl border border-gray-200 flex items-center justify-center mx-auto w-fit shadow-inner" style={{ backgroundColor: '#ffffff' }}>
-              <QRCanvas url={mobileUrl} />
-            </div>
-
-            {/* Direct URL Box */}
-            <div class="bg-gray-100 p-3 rounded-xl flex items-center justify-between gap-2 text-xs font-mono">
-              <span class="truncate text-gray-800 font-bold">{mobileUrl}</span>
-              <button
-                onClick={handleCopyLink}
-                class="px-2.5 py-1 bg-[#FF9933] text-white rounded-lg font-sans font-bold text-[11px] hover:bg-[#e67300] transition-colors flex-shrink-0"
-              >
-                {copied ? 'Copied! ✓' : 'Copy'}
-              </button>
-            </div>
-
-            <p class="text-[11px] text-gray-400">
-              Scan the QR with your phone camera, or tap <strong>Copy</strong> and paste the link in your mobile browser.
-            </p>
-
-            <button
-              onClick={() => setQrModalOpen(false)}
-              class="w-full py-2.5 bg-gray-900 text-white font-bold rounded-xl text-xs hover:bg-gray-800 transition-colors"
-            >
-              Close
-            </button>
-          </div>
         </div>
       )}
     </header>
