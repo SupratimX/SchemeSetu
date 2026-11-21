@@ -40,8 +40,8 @@ export default function Footer() {
             <h4 class="text-white font-semibold text-xs tracking-wider uppercase mb-3">Open Governance</h4>
             <ul class="space-y-2 text-xs">
               <li><a href="#/about" class="hover:text-white transition-colors">{t('footer.about', {}, lang)}</a></li>
-              <li><a href="https://github.com/schemesetu/schemesetu" target="_blank" rel="noreferrer" class="hover:text-white transition-colors">{t('footer.contribute', {}, lang)} (GitHub)</a></li>
-              <li><a href="https://github.com/schemesetu/schemesetu/issues/new" target="_blank" rel="noreferrer" class="hover:text-white transition-colors text-amber-400">{t('footer.report_link', {}, lang)}</a></li>
+              <li><a href="https://github.com/schemesetu/schemesetu" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{t('footer.contribute', {}, lang)} (GitHub)</a></li>
+              <li><a href="https://github.com/schemesetu/schemesetu/issues/new" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors text-amber-400">{t('footer.report_link', {}, lang)}</a></li>
               <li><a href="#/about" class="hover:text-white transition-colors">{t('footer.privacy', {}, lang)}</a></li>
             </ul>
           </div>

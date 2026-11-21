@@ -1,6 +1,13 @@
 import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 
+const securityHeaders = {
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(self), geolocation=()'
+};
+
 export default defineConfig({
   plugins: [preact()],
   resolve: {
@@ -12,7 +19,13 @@ export default defineConfig({
     }
   },
   server: {
-    host: '0.0.0.0', // Expose to local network for mobile access
-    port: 5173
+    host: '0.0.0.0',
+    port: 5173,
+    headers: securityHeaders
+  },
+  preview: {
+    host: '0.0.0.0',
+    port: 5173,
+    headers: securityHeaders
   }
 })

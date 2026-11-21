@@ -12,8 +12,8 @@ import { evaluateScheme } from '../engine/evaluate.js';
 const allSchemes = [...centralSchemes, ...assamSchemes];
 
 const getCat = () => {
-  const match = window.location.hash.match(/category=([^&]+)/);
-  return match ? decodeURIComponent(match[1]) : 'all';
+  const match = window.location.hash.match(/category=([a-zA-Z0-9_-]+)/);
+  return match ? match[1].toLowerCase() : 'all';
 };
 
 export default function Browse() {

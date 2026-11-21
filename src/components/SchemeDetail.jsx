@@ -2,6 +2,7 @@ import { language, isSchemeSaved, toggleSaveScheme, checkedDocuments, toggleDocu
 import { t } from '../utils/i18n.js';
 import { explainReason } from '../engine/explain.js';
 import { printChecklist } from '../utils/pdf.js';
+import { sanitizeUrl } from '../utils/security.js';
 
 export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} }) {
   const lang = language.value;
@@ -158,7 +159,7 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
         <div class="flex flex-col sm:flex-row items-stretch gap-3">
           {scheme.links?.official && (
             <a
-              href={scheme.links.official}
+              href={sanitizeUrl(scheme.links.official)}
               target="_blank"
               rel="noopener noreferrer"
               class="flex-1 px-5 py-3.5 bg-[#138808] hover:bg-[#0f6b06] text-white text-center font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
@@ -169,7 +170,7 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
           )}
           {scheme.links?.myscheme && (
             <a
-              href={scheme.links.myscheme}
+              href={sanitizeUrl(scheme.links.myscheme)}
               target="_blank"
               rel="noopener noreferrer"
               class="flex-1 px-5 py-3.5 bg-gray-900 hover:bg-gray-800 text-white text-center font-bold text-sm rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
@@ -182,7 +183,7 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
 
         {scheme.links?.helpline && (
           <div class="flex items-center justify-center pt-2">
-            <a href={`tel:${scheme.links.helpline}`} class="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-[#FF9933] font-semibold transition-colors">
+            <a href={sanitizeUrl(`tel:${scheme.links.helpline}`, ['tel:'])} class="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-[#FF9933] font-semibold transition-colors">
               <span>📞 Official Helpline:</span>
               <span class="font-bold text-[#FF9933] underline">{scheme.links.helpline}</span>
             </a>
@@ -194,7 +195,7 @@ export default function SchemeDetail({ scheme, evaluation, documentsMeta = {} })
         <div>
           {t('scheme.verified_on', {}, lang)}: <strong class="text-gray-700">{scheme.lastVerified || 'Recent'}</strong> {t('scheme.by', {}, lang)} <span class="text-gray-700">{scheme.verifiedBy || 'Maintainers'}</span>
         </div>
-        <a href="https://github.com/schemesetu/schemesetu/issues/new" target="_blank" rel="noreferrer" class="text-amber-600 hover:underline">
+        <a href="https://github.com/schemesetu/schemesetu/issues/new" target="_blank" rel="noopener noreferrer" class="text-amber-600 hover:underline">
           🚩 {t('scheme.report', {}, lang)}
         </a>
       </div>

@@ -2,6 +2,7 @@ import { useState } from 'preact/hooks';
 import { language } from '../store/profile.js';
 import { t } from '../utils/i18n.js';
 import { isSpeechRecognitionSupported, startVoiceInput, stopVoiceInput } from '../utils/speech.js';
+import { sanitizeSearchInput } from '../utils/security.js';
 
 export default function SearchBar({ value, onChange, placeholder }) {
   const [listening, setListening] = useState(false);
@@ -11,7 +12,7 @@ export default function SearchBar({ value, onChange, placeholder }) {
     setListening(true);
     startVoiceInput({
       lang: language.value,
-      onResult: (text) => { setListening(false); onChange(text); },
+      onResult: (text) => { setListening(false); onChange(sanitizeSearchInput(text)); },
       onError: () => setListening(false),
       onEnd: () => setListening(false)
     });
@@ -26,7 +27,7 @@ export default function SearchBar({ value, onChange, placeholder }) {
         <input
           type="text"
           value={value}
-          onInput={(e) => onChange(e.target.value)}
+          onInput={(e) => onChange(sanitizeSearchInput(e.target.value))}
           placeholder={placeholder || t('browse.search_placeholder', {}, language.value)}
           class="w-full pl-12 pr-24 py-3.5 bg-white border border-gray-300 rounded-2xl text-base text-gray-900 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent transition-all"
         />

@@ -1,8 +1,18 @@
-import { language } from '../store/profile.js';
+import { useState } from 'preact/hooks';
+import { language, clearAllUserData } from '../store/profile.js';
 import { t } from '../utils/i18n.js';
 
 export default function About() {
+  const [cleared, setCleared] = useState(false);
   const lang = language.value;
+
+  const handleClearData = () => {
+    if (window.confirm('Delete all saved schemes, quiz answers, and checklist progress from this device?')) {
+      clearAllUserData();
+      setCleared(true);
+      setTimeout(() => setCleared(false), 3000);
+    }
+  };
 
   return (
     <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 space-y-10">
@@ -28,6 +38,31 @@ export default function About() {
         ))}
       </div>
 
+      {/* User Privacy & Local Storage Controls */}
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+              <span>🛡️</span> Your Privacy & Device Storage
+            </h2>
+            <p class="text-xs text-gray-500 mt-1">
+              All your quiz responses and saved schemes are encrypted and stored only inside your browser's private local storage.
+            </p>
+          </div>
+          <button
+            onClick={handleClearData}
+            class="px-4 py-2 bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 rounded-xl text-xs font-bold transition-colors whitespace-nowrap self-start sm:self-auto"
+          >
+            {cleared ? 'Cleared ✓' : '🗑️ Clear My Saved Data'}
+          </button>
+        </div>
+        {cleared && (
+          <div class="p-3 bg-emerald-50 text-emerald-800 rounded-xl text-xs font-semibold">
+            All locally stored quiz responses, bookmarks, and checklist marks have been securely purged.
+          </div>
+        )}
+      </div>
+
       <div class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 space-y-4">
         <h2 class="text-xl font-bold text-gray-900">Data Sourcing & Git-Based Verification</h2>
         <p class="text-sm text-gray-600 leading-relaxed">{t('about.data_note', {}, lang)}</p>
@@ -35,7 +70,7 @@ export default function About() {
           Every scheme in SchemeSetu is version-controlled on GitHub. When an official policy update occurs, maintainers update the JSON schema, verify official notification URLs, and automated CI pipelines run sanity tests before publishing.
         </p>
         <div class="pt-2">
-          <a href="https://github.com/schemesetu/schemesetu" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white font-bold text-xs rounded-xl hover:bg-gray-800 transition-colors">
+          <a href="https://github.com/schemesetu/schemesetu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white font-bold text-xs rounded-xl hover:bg-gray-800 transition-colors">
             <span>🐙 {t('about.contribute', {}, lang)}</span>
           </a>
         </div>

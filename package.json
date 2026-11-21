@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview --host"
+    "preview": "vite preview --host",
+    "test": "node scripts/validate-data.js && node scripts/audit-security.js",
+    "audit:security": "node scripts/audit-security.js",
+    "audit:data": "node scripts/validate-data.js"
   },
   "dependencies": {
     "@preact/signals": "^1.2.3",
     "minisearch": "^6.3.0",
-    "preact": "^10.19.2",
-    "qrcode": "^1.5.4"
+    "preact": "^10.19.2"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.1",
